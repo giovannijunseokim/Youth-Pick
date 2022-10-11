@@ -73,15 +73,17 @@
         android:layout_height="wrap_content"
         android:text="@string/login"
         android:layout_marginHorizontal="40dp"
-        android:layout_marginBottom="5dp"
-        app:layout_constraintBottom_toTopOf="@id/btn_signup"/>
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@id/btn_signup"
+        android:background="@drawable/btn_round"/>
     <Button
         android:id="@+id/btn_signup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/signup"
         android:layout_marginHorizontal="40dp"
-        android:layout_marginBottom="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/btn_round"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
