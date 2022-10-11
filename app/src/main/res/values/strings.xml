@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">YouthPick</string>
+    <string name="intro_youthpick_description">쉽고 빠른 청년정책 정보 찾기</string>
+    <string name="intro_start">시작하기</string>
+</resources>
