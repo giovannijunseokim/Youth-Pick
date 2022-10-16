@@ -5,8 +5,9 @@
       <map>
         <entry key="app/src/main/res/drawable/btn_round.xml" value="0.1525" />
         <entry key="app/src/main/res/layout/activity_intro.xml" value="0.18681318681318682" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.14018691588785046" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.29739583333333336" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.235221705926913" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/menu_main.xml" value="0.15544041450777202" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1005" />
       </map>
     </option>
