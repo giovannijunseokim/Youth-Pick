@@ -3,7 +3,6 @@ package com.example.youthpick
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
-import com.example.youthpick.databinding.ActivityIntroBinding
 import com.example.youthpick.databinding.ActivityMainBinding
 import com.example.youthpick.fragments.CalendarFragment
 import com.example.youthpick.fragments.ChatbotFragment
