@@ -19,9 +19,10 @@ class IntroActivity : AppCompatActivity() {
             changeActivity()
         }
     }
-    fun changeActivity(){
+    private fun changeActivity(){
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         finish()
     }
 }
