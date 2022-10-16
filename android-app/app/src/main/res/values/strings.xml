@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">YouthPick</string>
     <string name="intro_youthpick_description">쉽고 빠른 청년정책 정보 찾기</string>
+    <string name="login_description">편리한 서비스 이용을 위해 유스픽에 가입해 주세요</string>
     <string name="start">시작하기</string>
     <string name="login">로그인</string>
     <string name="signup">회원가입</string>
@@ -8,4 +9,6 @@
     <string name="put_your_id">아이디를 입력하세요.</string>
     <string name="pw">비밀번호</string>
     <string name="put_your_pw">비밀번호를 입력하세요.</string>
+    <string name="find_id">아이디 찾기</string>
+    <string name="find_pw">비밀번호 찾기</string>
 </resources>
