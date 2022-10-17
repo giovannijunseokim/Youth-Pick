@@ -3,11 +3,11 @@
     <item
         android:title="@string/fragment_main"
         android:icon="@mipmap/ic_launcher"
-        android:id="@+id/menu_main"/>
+        android:id="@+id/item_main"/>
     <item android:title="@string/fragment_calendar"
-        android:id="@+id/menu_calendar"/>
+        android:id="@+id/item_calendar"/>
     <item android:title="@string/fragment_chatbot"
-        android:id="@+id/menu_chatbot"/>
+        android:id="@+id/item_chatbot"/>
     <item android:title="@string/fragment_note"
-        android:id="@+id/menu_note"/>
+        android:id="@+id/item_note"/>
 </menu>
