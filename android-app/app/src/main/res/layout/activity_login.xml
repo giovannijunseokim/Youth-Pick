@@ -24,18 +24,19 @@
         android:text="@string/login_description"
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@id/tv_id"
-        android:layout_marginBottom="50dp"/>
+        android:layout_marginBottom="50dp"
+        android:fontFamily="@font/scdream5_kor"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tv_id"
         android:text="@string/id"
         android:textSize="20sp"
-        android:textStyle="bold"
         android:layout_marginStart="40dp"
         android:layout_marginBottom="5dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/textfield_id"/>
+        app:layout_constraintBottom_toTopOf="@+id/textfield_id"
+        android:fontFamily="@font/heavitas_eng"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textfield_id"
@@ -51,6 +52,7 @@
             android:id="@+id/et_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/scdream5_kor"
             />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -60,11 +62,11 @@
         android:id="@+id/tv_pw"
         android:text="@string/pw"
         android:textSize="20sp"
-        android:textStyle="bold"
         android:layout_marginStart="40dp"
         android:layout_marginBottom="5dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/textfield_pw"/>
+        app:layout_constraintBottom_toTopOf="@id/textfield_pw"
+        android:fontFamily="@font/scdream5_kor"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textfield_pw"
@@ -78,7 +80,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_pw"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/scdream5_kor"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -92,7 +95,8 @@
         android:layout_marginHorizontal="40dp"
         android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toTopOf="@id/l_layout"
-        app:elevation="1dp" />
+        app:elevation="5dp"
+        android:fontFamily="@font/scdream5_kor"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -106,7 +110,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/find_id"
-            android:layout_marginEnd="5dp"/>
+            android:layout_marginEnd="5dp"
+            android:fontFamily="@font/scdream5_kor"/>
         <View
             android:layout_width="1dp"
             android:layout_height="10dp"
@@ -116,7 +121,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/find_pw"
-            android:layout_marginHorizontal="5dp"/>
+            android:layout_marginHorizontal="5dp"
+            android:fontFamily="@font/scdream5_kor"/>
         <View
             android:layout_width="1dp"
             android:layout_height="10dp"
@@ -128,7 +134,8 @@
             android:text="@string/signup"
             android:layout_marginStart="5dp"
             android:textColor="@color/blue"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:fontFamily="@font/scdream5_kor"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
