@@ -7,6 +7,11 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/YouthPick.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/YouthPick.app.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/YouthPick.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/YouthPick.app.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/YouthPick.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/YouthPick.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android-app.YouthPick.iml" filepath="$PROJECT_DIR$/.idea/modules/android-app.YouthPick.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android-app.YouthPick.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android-app.YouthPick.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android-app.YouthPick.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android-app.YouthPick.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android-app.YouthPick.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android-app.YouthPick.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android-app.YouthPick.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android-app.YouthPick.app.unitTest.iml" />
     </modules>
   </component>
 </project>
