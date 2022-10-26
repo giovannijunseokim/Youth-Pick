@@ -11,8 +11,8 @@
     <string name="put_your_pw">비밀번호를 입력하세요.</string>
     <string name="find_id">아이디 찾기</string>
     <string name="find_pw">비밀번호 찾기</string>
-    <string name="fragment_main">메인 화면</string>
+거    <string name="fragment_main">홈</string>
     <string name="fragment_calendar">캘린더</string>
     <string name="fragment_chatbot">챗봇</string>
-    <string name="fragment_note">메모장</string>
+    <string name="fragment_note">메모</string>
 </resources>
