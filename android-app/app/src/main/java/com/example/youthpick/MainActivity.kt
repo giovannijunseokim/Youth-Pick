@@ -2,8 +2,11 @@ package com.example.youthpick
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
 import android.view.MenuItem
+import android.widget.Button
 import com.example.youthpick.databinding.ActivityMainBinding
+import com.example.youthpick.databinding.FragmentMainBinding
 import com.example.youthpick.fragments.CalendarFragment
 import com.example.youthpick.fragments.ChatbotFragment
 import com.example.youthpick.fragments.MainFragment
@@ -11,6 +14,7 @@ import com.example.youthpick.fragments.NoteFragment
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding : ActivityMainBinding
+    lateinit var fragmentMainBinding: FragmentMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -57,5 +61,8 @@ class MainActivity : AppCompatActivity() {
             }
             else -> return false
         }
+    }
+    fun drawerOpen(){
+        binding.drawer.openDrawer(Gravity.LEFT)
     }
 }
