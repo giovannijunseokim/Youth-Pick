@@ -25,7 +25,7 @@
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@id/tv_id"
         android:layout_marginBottom="50dp"
-        android:fontFamily="@font/scdream5_kor"/>
+        android:fontFamily="@font/apple_gothic_500"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -36,7 +36,7 @@
         android:layout_marginBottom="5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/textfield_id"
-        android:fontFamily="@font/heavitas_eng"/>
+        android:fontFamily="@font/gmarket_eng_700"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textfield_id"
@@ -52,7 +52,7 @@
             android:id="@+id/et_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/scdream5_kor"
+            android:fontFamily="@font/apple_gothic_500"
             />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -66,7 +66,7 @@
         android:layout_marginBottom="5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/textfield_pw"
-        android:fontFamily="@font/scdream5_kor"/>
+        android:fontFamily="@font/apple_gothic_900"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textfield_pw"
@@ -81,7 +81,7 @@
             android:id="@+id/et_pw"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/scdream5_kor"/>
+            android:fontFamily="@font/apple_gothic_500"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -96,7 +96,7 @@
         android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toTopOf="@id/l_layout"
         app:elevation="5dp"
-        android:fontFamily="@font/scdream5_kor"/>
+        android:fontFamily="@font/apple_gothic_500"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -111,7 +111,7 @@
             android:layout_height="wrap_content"
             android:text="@string/find_id"
             android:layout_marginEnd="5dp"
-            android:fontFamily="@font/scdream5_kor"/>
+            android:fontFamily="@font/apple_gothic_500"/>
         <View
             android:layout_width="1dp"
             android:layout_height="10dp"
@@ -122,7 +122,7 @@
             android:layout_height="wrap_content"
             android:text="@string/find_pw"
             android:layout_marginHorizontal="5dp"
-            android:fontFamily="@font/scdream5_kor"/>
+            android:fontFamily="@font/apple_gothic_500"/>
         <View
             android:layout_width="1dp"
             android:layout_height="10dp"
@@ -135,7 +135,7 @@
             android:layout_marginStart="5dp"
             android:textColor="@color/blue"
             android:textStyle="bold"
-            android:fontFamily="@font/scdream5_kor"/>
+            android:fontFamily="@font/apple_gothic_500"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
