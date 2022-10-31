@@ -8,36 +8,14 @@
     tools:context=".fragments.MainFragment"
     android:background="@color/grey_50">
 
-    <ImageButton
-        android:id="@+id/btn_drawer_opener"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:src="@drawable/fab_drawer_opener"
-        android:layout_margin="20dp"
-        android:backgroundTint="@color/white"
-        app:iconTint="@color/grey_600"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/layout_round_box" />
-    <ImageButton
-        android:id="@+id/btn_user"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:src="@drawable/fab_user"
-        android:layout_margin="20dp"
-        android:backgroundTint="@color/white"
-        app:iconTint="@color/grey_600"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/layout_border_button" />
     <TextView
         android:id="@+id/tv_main_fragment_description1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/main_fragment_description1"
-        android:textSize="22sp"
+        android:textSize="18sp"
         android:fontFamily="@font/apple_gothic_300"
-        app:layout_constraintTop_toBottomOf="@id/btn_drawer_opener"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="20dp"
         android:layout_marginHorizontal="20dp"/>
     <TextView
@@ -45,14 +23,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/main_fragment_description2"
-        android:textSize="25sp"
-        android:fontFamily="@font/apple_gothic_600"
+        android:textSize="20sp"
+        android:fontFamily="@font/apple_gothic_800"
         app:layout_constraintTop_toBottomOf="@id/tv_main_fragment_description1"
-        android:layout_marginHorizontal="20dp"/>
+        android:layout_marginHorizontal="20dp"
+        android:textColor="#383838"/>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_search"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="70dp"
         android:layout_margin="40dp"
         app:layout_constraintTop_toBottomOf="@id/tv_main_fragment_description2"
         tools:layout_editor_absoluteX="40dp">
@@ -66,16 +45,20 @@
             android:background="@drawable/layout_round_search_view"
             android:backgroundTint="@color/grey_200"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/fab_search_setting"
+            app:layout_constraintEnd_toStartOf="@id/btn_search_setting"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-            android:id="@+id/fab_search_setting"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginEnd="10dp"
-            app:icon="@drawable/search_setting"
-            app:iconTint="@color/white"
+
+        <ImageButton
+            android:id="@+id/btn_search_setting"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="15dp"
+            android:src="@drawable/search_setting"
+            android:scaleType="fitXY"
+            app:iconTint="@color/grey_600"
+            android:background="@drawable/layout_round_box"
+            android:elevation="5dp"
             android:backgroundTint="@color/orange_400"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -88,6 +71,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
         android:clipChildren="false"
         android:clipToPadding="false"
         android:scaleType="fitXY"
