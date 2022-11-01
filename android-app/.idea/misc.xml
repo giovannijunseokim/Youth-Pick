@@ -7,23 +7,25 @@
         <entry key="app/src/main/res/drawable/btn_round.xml" value="0.1525" />
         <entry key="app/src/main/res/drawable/layout_border_button.xml" value="0.5303344116210937" />
         <entry key="app/src/main/res/drawable/layout_round_box.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/layout_round_button.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/layout_round_image.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/layout_rounnd_box.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/layout_rounnd_search_view.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/menu_selector_color.xml" value="0.1" />
         <entry key="app/src/main/res/font/font.xml" value="0.17604166666666668" />
         <entry key="app/src/main/res/layout/activity_intro.xml" value="0.21843550126631184" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.5090543259557344" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2907268170426065" />
         <entry key="app/src/main/res/layout/fragment_calendar.xml" value="0.11610486891385768" />
         <entry key="app/src/main/res/layout/fragment_chatbot.xml" value="0.11610486891385768" />
-        <entry key="app/src/main/res/layout/fragment_main.xml" value="0.2813299232736573" />
+        <entry key="app/src/main/res/layout/fragment_main.xml" value="0.27347470649383354" />
         <entry key="app/src/main/res/layout/fragment_note.xml" value="0.11610486891385768" />
         <entry key="app/src/main/res/layout/fragment_pager_calendar.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/fragment_pager_chatbot.xml" value="0.29739583333333336" />
         <entry key="app/src/main/res/layout/fragment_pager_home.xml" value="0.349310811360677" />
         <entry key="app/src/main/res/layout/fragment_pager_memo.xml" value="0.29739583333333336" />
-        <entry key="app/src/main/res/layout/item_pages.xml" value="0.26427154541015624" />
-        <entry key="app/src/main/res/layout/navigation_header.xml" value="0.6004048233903447" />
+        <entry key="app/src/main/res/layout/item_pages.xml" value="0.30237274169921874" />
+        <entry key="app/src/main/res/layout/navigation_header.xml" value="0.18803418803418803" />
         <entry key="app/src/main/res/menu/menu_main.xml" value="0.37959965523042827" />
         <entry key="app/src/main/res/menu/menu_navigation.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1005" />
