@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:id="@+id/drawer">
     <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,24 +17,24 @@
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:src="@drawable/fab_drawer_opener"
-            android:layout_margin="20dp"
+            android:layout_margin="30dp"
             android:backgroundTint="@color/white"
             app:iconTint="@color/grey_600"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:background="@drawable/layout_round_box"
-            android:elevation="5dp"/>
+            android:background="@drawable/layout_round_button"
+            android:elevation="5dp" />
         <ImageButton
             android:id="@+id/btn_user"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:src="@drawable/fab_user"
-            android:layout_margin="20dp"
+            android:layout_margin="30dp"
             android:backgroundTint="@color/white"
             app:iconTint="@color/grey_600"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:background="@drawable/layout_round_box"
+            android:background="@drawable/layout_round_button"
             android:elevation="5dp"/>
 
         <androidx.fragment.app.FragmentContainerView
@@ -64,6 +63,74 @@
         android:layout_height="match_parent"
         android:id="@+id/main_drawer_view"
         android:layout_gravity="start"
-        app:headerLayout="@layout/navigation_header"
-        android:background="@color/grey_50" />
+        android:background="@color/grey_50" >
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/grey_50"
+            android:orientation="vertical"
+            android:padding="30dp">
+
+            <ImageView
+                android:id="@+id/iv_drawer_logo"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/youthpick_logo"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="-15dp"/>
+
+            <TextView
+                android:id="@+id/tv_drawer_calendar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="유스픽 정책 캘린더"
+                android:layout_marginBottom="20dp"
+                android:textSize="16sp"
+                android:fontFamily="@font/apple_gothic_800"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/tv_drawer_chatbot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="스픽 챗봇"
+                android:layout_marginBottom="20dp"
+                android:textSize="16sp"
+                android:fontFamily="@font/apple_gothic_800"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/tv_drawer_note"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="정책 메모장"
+                android:layout_marginBottom="130dp"
+                android:textSize="16sp"
+                android:fontFamily="@font/apple_gothic_800"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="공지사항"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/apple_gothic_500"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="고객센터"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/apple_gothic_500"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="의견 보내기"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/apple_gothic_500"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="설정"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/apple_gothic_500"/>
+        </LinearLayout>
+    </com.google.android.material.navigation.NavigationView>
 </androidx.drawerlayout.widget.DrawerLayout>
