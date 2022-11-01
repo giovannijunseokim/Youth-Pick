@@ -2,12 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:title="@string/fragment_main"
-        android:icon="@mipmap/ic_launcher"
-        android:id="@+id/item_main"/>
+        android:icon="@drawable/home_nav"
+        android:id="@+id/item_main" />
     <item android:title="@string/fragment_calendar"
-        android:id="@+id/item_calendar"/>
+        android:id="@+id/item_calendar"
+        android:icon="@drawable/calender_nav"/>
     <item android:title="@string/fragment_chatbot"
-        android:id="@+id/item_chatbot"/>
+        android:id="@+id/item_chatbot"
+        android:icon="@drawable/talk_nav"/>
     <item android:title="@string/fragment_note"
-        android:id="@+id/item_note"/>
+        android:id="@+id/item_note"
+        android:icon="@drawable/memo_nav"/>
 </menu>

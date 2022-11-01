@@ -1,8 +1,9 @@
 package com.example.youthpick
 
-import androidx.appcompat.app.AppCompatActivity
+
 import android.os.Bundle
-import android.view.MenuItem
+import android.view.Gravity
+import androidx.appcompat.app.AppCompatActivity
 import com.example.youthpick.databinding.ActivityMainBinding
 import com.example.youthpick.fragments.CalendarFragment
 import com.example.youthpick.fragments.ChatbotFragment
@@ -11,13 +12,34 @@ import com.example.youthpick.fragments.NoteFragment
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding : ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         firstFragment()
         binding.bnvMain.setOnItemSelectedListener { item ->
-            changeFragment(item)
+            changeFragment(item.itemId)
+        }
+
+        binding.btnDrawerOpener.setOnClickListener {
+            drawerOpen()
+        }
+        navigationClickEvent(binding)
+    }
+
+    private fun navigationClickEvent(binding: ActivityMainBinding) {
+        binding.tvDrawerCalendar.setOnClickListener {
+            changeFragment(R.id.item_calendar)
+            binding.bnvMain.selectedItemId = R.id.item_calendar
+        }
+        binding.tvDrawerChatbot.setOnClickListener {
+            changeFragment(R.id.item_chatbot)
+            binding.bnvMain.selectedItemId = R.id.item_chatbot
+        }
+        binding.tvDrawerNote.setOnClickListener {
+            changeFragment(R.id.item_note)
+            binding.bnvMain.selectedItemId = R.id.item_note
         }
     }
 
@@ -29,8 +51,8 @@ class MainActivity : AppCompatActivity() {
                 .commit()
         }
     }
-    private fun changeFragment(item : MenuItem) : Boolean{
-        when(item.itemId) {
+    fun changeFragment(itemId : Int) : Boolean{
+        when(itemId) {
             R.id.item_main -> {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.fragment_container_view, MainFragment())
@@ -57,5 +79,9 @@ class MainActivity : AppCompatActivity() {
             }
             else -> return false
         }
+    }
+
+    fun drawerOpen(){
+        binding.drawer.openDrawer(Gravity.LEFT)
     }
 }

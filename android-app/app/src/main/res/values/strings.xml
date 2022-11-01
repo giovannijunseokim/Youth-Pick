@@ -11,8 +11,19 @@
     <string name="put_your_pw">비밀번호를 입력하세요.</string>
     <string name="find_id">아이디 찾기</string>
     <string name="find_pw">비밀번호 찾기</string>
-    <string name="fragment_main">메인 화면</string>
+    거
+    <string name="fragment_main">홈</string>
     <string name="fragment_calendar">캘린더</string>
     <string name="fragment_chatbot">챗봇</string>
-    <string name="fragment_note">메모장</string>
+    <string name="fragment_note">메모</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="main_fragment_description1">많은 서울시 청년 정보를</string>
+    <string name="main_fragment_description2">유스픽에서 편리하게 확인하세요!</string>
+    <string name="calendar_page_title">유스픽 캘린더 바로가기</string>
+    <string name="calendar_page_desc">서울시 청년 정책 정보를 한눈에</string>
+    <string name="chatbot_page_title">유스픽 챗봇 바로가기</string>
+    <string name="chatbot_page_desc">모르는건 챗봇에게 물어봐~</string>
+    <string name="memo_page_title">메모 바로가기</string>
+    <string name="memo_page_desc">중요한 일정은 메모해두자</string>
 </resources>

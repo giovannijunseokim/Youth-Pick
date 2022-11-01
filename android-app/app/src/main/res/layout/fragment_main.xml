@@ -1,13 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.MainFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.MainFragment"
+    android:background="@color/grey_50">
 
     <TextView
+        android:id="@+id/tv_main_fragment_description1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="main" />
+        android:layout_height="wrap_content"
+        android:text="@string/main_fragment_description1"
+        android:textSize="18sp"
+        android:fontFamily="@font/apple_gothic_300"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="30dp"/>
+    <TextView
+        android:id="@+id/tv_main_fragment_description2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/main_fragment_description2"
+        android:textSize="20sp"
+        android:fontFamily="@font/apple_gothic_800"
+        app:layout_constraintTop_toBottomOf="@id/tv_main_fragment_description1"
+        android:layout_marginHorizontal="30dp"
+        android:textColor="#383838"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_search"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginVertical="30dp"
+        android:layout_marginHorizontal="30dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_main_fragment_description2"
+        tools:layout_editor_absoluteX="40dp">
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_view"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="5dp"
+            android:layout_marginEnd="40dp"
+            app:iconifiedByDefault="false"
+            app:queryHint="Search"
+            android:queryBackground="@null"
+            android:background="@drawable/layout_round_search_view"
+            android:backgroundTint="@color/grey_200"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_search_setting"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+        <ImageButton
+            android:id="@+id/btn_search_setting"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:padding="15dp"
+            android:src="@drawable/search_setting"
+            android:scaleType="fitXY"
+            app:iconTint="@color/grey_600"
+            android:background="@drawable/layout_round_button"
+            android:elevation="5dp"
+            android:backgroundTint="@color/orange_400"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/search_view"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="60dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_search"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

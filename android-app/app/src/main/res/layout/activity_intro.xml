@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".IntroActivity">
+    tools:context=".IntroActivity"
+    android:background="@color/grey_50">
     <ImageView
         android:id="@+id/iv_intro_logo"
         android:layout_width="wrap_content"
@@ -13,17 +14,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="50dp"/>
-    <TextView
-        android:id="@+id/tv_intro_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/intro_youthpick_description"
-        android:textSize="12sp"
-        app:layout_constraintTop_toBottomOf="@id/iv_intro_logo"
-        android:fontFamily="@font/scdream5_kor"/>
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
