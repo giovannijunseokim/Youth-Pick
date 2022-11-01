@@ -25,7 +25,10 @@ class MainActivity : AppCompatActivity() {
         binding.btnDrawerOpener.setOnClickListener {
             drawerOpen()
         }
+        navigationClickEvent(binding)
+    }
 
+    private fun navigationClickEvent(binding: ActivityMainBinding) {
         binding.tvDrawerCalendar.setOnClickListener {
             changeFragment(R.id.item_calendar)
             binding.bnvMain.selectedItemId = R.id.item_calendar
@@ -38,7 +41,6 @@ class MainActivity : AppCompatActivity() {
             changeFragment(R.id.item_note)
             binding.bnvMain.selectedItemId = R.id.item_note
         }
-
     }
 
     private fun firstFragment(){
@@ -78,6 +80,7 @@ class MainActivity : AppCompatActivity() {
             else -> return false
         }
     }
+
     fun drawerOpen(){
         binding.drawer.openDrawer(Gravity.LEFT)
     }

@@ -19,7 +19,6 @@ class MainFragment ():Fragment(){
     private var _binding: FragmentMainBinding? = null
     private val binding: FragmentMainBinding
         get() = requireNotNull(_binding){"binding이 널임"}
-    lateinit var itemPagesBinding: ItemPagesBinding
     private val adapter by lazy { ViewPagerAdapter(requireContext()) }
 
     override fun onCreateView(
@@ -35,25 +34,6 @@ class MainFragment ():Fragment(){
         binding.viewpager.setPageTransformer { page, position ->
             page.translationX = position * 150
         }
-
-//        binding.viewpager.setOnClickListener{
-//            Log.d("GIO", "No,,,,")
-//            itemPagesBinding = ItemPagesBinding.inflate(layoutInflater)
-//            itemPagesBinding.pagerItem.setOnClickListener {
-//                when(itemPagesBinding.tvPagerTitle.text){
-//                    "유스픽 캘린더 바로가기" -> {
-//                        Log.d("GIO", "No,,,,")
-//                        (activity as MainActivity).changeFragment(R.id.item_calendar)}
-//                    "유스픽 챗봇 바로가기" ->
-//                        (activity as MainActivity).changeFragment(R.id.item_chatbot)
-//                    "메모 바로가기" ->
-//                        (activity as MainActivity).changeFragment(R.id.item_note)
-//                    else ->
-//                        Log.d("GIO", "No,,,,")
-//                }
-//            }
-//
-//        }
 
         return binding.root
     }
