@@ -712,9 +712,10 @@ A HORIZONTAL event
   z-index: 1; /* container inner z-index's because <tr>s can't do it */
 }
 .fc .fc-daygrid-day.fc-day-today {
-  background-color: rgba(255, 220, 40, 0.15);
-  background-color: var(--fc-today-bg-color, rgba(255, 220, 40, 0.15));
+  background-color: rgba(21, 5, 255, 0.15);
+  background-color: var(--fc-today-bg-color, rgba(12, 0, 182, 0.15));
 }
+
 .fc .fc-daygrid-day-frame {
   position: relative;
   min-height: 100%; /* seems to work better than `height` because sets height after rows/cells naturally do it */

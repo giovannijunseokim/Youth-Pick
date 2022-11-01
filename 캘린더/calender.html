@@ -2,9 +2,6 @@
 <html lang='en'>
   <head>
     <meta charset='utf-8' />
-    
-    <link href='/docs/dist/demo-to-codepen.css' rel='stylesheet' />
-    <script src='/docs/dist/demo-to-codepen.js'></script>
    <link href='main.css' rel='stylesheet' />
    <link href='swiper.css' rel='stylesheet' />
    <script src='main.js'></script>
@@ -45,7 +42,7 @@
           headerToolbar: {
             left: 'title',
             center: '',
-            right: ''
+            right: 'prev next'
           },
           editable: true,
           droppable: true, // this allows things to be dropped onto the calendar
@@ -69,7 +66,6 @@
         var calendarEl = document.getElementById('calendar');
         var checkbox = document.getElementById('drop-remove');
     
-        // initialize the external events
         // -----------------------------------------------------------------
         new Draggable(containerEl, {
           itemSelector: '.fc-event_1',
@@ -79,20 +75,17 @@
             };
           }
         });
-        // initialize the calendar
-        // -----------------------------------------------------------------
+        // ------------------------------√-----------------------------------
         var calendar = new Calendar(calendarEl, {
           headerToolbar: {
-            left: 'title',
+            left: ' " title ',
             center: '',
-            right: ''
+            right: 'prev next'
           },
           editable: true,
-          droppable: true, // this allows things to be dropped onto the calendar
+          droppable: true, 
           drop: function(info) {
-            // is the "remove after drop" checkbox checked?
             if (checkbox.checked) {
-              // if so, remove the element from the "Draggable Events" list
               info.draggedEl.parentNode.removeChild(info.draggedEl);
             }
           }
@@ -125,7 +118,7 @@
           headerToolbar: {
             left: 'title',
             center: '',
-            right: ''
+            right: 'prev next'
           },
           editable: true,
           droppable: true, // this allows things to be dropped onto the calendar
@@ -157,17 +150,17 @@
     </div>
     
     <div class="mySlides fade fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event" style="text-align: center;margin-top: 10px; height: 80px; background-color: white;">
-      <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">서울시 청년 월세 지원 마감1</p></div>
+      <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">서울시 청년수당</p></div>
     </div>
     
     <div class="mySlides fade fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event" style="text-align: center;margin-top: 10px; height: 80px; background-color: white;">
-      <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">서울시 청년 월세 지원 마감2</p></div>    </div>
+      <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">서울형 뉴딜 일자리</p></div>    </div>
 
     <div class="mySlides fade fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event" style="text-align: center;margin-top: 10px; height: 80px; background-color: white;">
-      <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">서울시 청년 월세 지원 마감3</p></div>    </div>
+      <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">독립유공자 후손 장학금</p></div>    </div>
 
     <div class="mySlides fade fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event" style="text-align: center;margin-top: 10px; height: 80px; background-color: white;">
-      <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">서울시 청년 월세 지원 마감4</p></div>    </div>
+      <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">서울우수인재 장학금</p></div>    </div>
     <p style="display: none;">
       <input type='checkbox' id='drop-remove' />
       <label for='drop-remove'>remove after drop</label>
@@ -178,23 +171,23 @@
     <div  id='external-events_1' class="slideshow-container_1" style="width: 80%; height: 100px; background-color: white; border-radius: 20px; box-shadow: 5px 5px 5px 5px gray;">
 
       <div class="mySlides_1 fade fc-event_1 fc-h-event fc-daygrid-event fc-daygrid-block-event" style="text-align: center;margin-top: 10px;  height: 80px; background-color: white;">
-        <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">서울시 청년 월세 지원 마</p></div>
+        <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">서울시 청년부상제대군인지원사업</p></div>
       </div>
       
       <div class="mySlides_1 fade fc-event_1 fc-h-event fc-daygrid-event fc-daygrid-block-event" style="text-align: center;margin-top: 10px; height: 80px; background-color: white;">
-        <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">서울시 청년 월세 지원 </p></div>
+        <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">천호사거리 지하 청년문화공간 조성 </p></div>
       </div>
       
       <div class="mySlides_1 fade fc-event_1 fc-h-event fc-daygrid-event fc-daygrid-block-event" style="text-align: center;margin-top: 10px; height: 80px; background-color: white;">
-        <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">서울시 청년 월세 </p></div>
+        <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">서울청년정책네트워크</p></div>
       </div>
   
       <div class="mySlides_1 fade fc-event_1 fc-h-event fc-daygrid-event fc-daygrid-block-event" style="text-align: center;margin-top: 10px; height: 80px; background-color: white;">
-        <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">서울시 청년 </p></div>
+        <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">서울희망 대학 진로 장학금 </p></div>
       </div>
   
       <div class="mySlides_1 fade fc-event_1 fc-h-event fc-daygrid-event fc-daygrid-block-event" style="text-align: center;margin-top: 10px; height: 80px; background-color: white;">
-        <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">서울시 </p></div>
+        <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">청년 이사비 지원 </p></div>
       </div>
       <p style="display: none;">
         <input type='checkbox' id='drop-remove' />
@@ -206,23 +199,23 @@
       <div  id='external-events_2' class="slideshow-container_2" style="width: 80%; height: 100px; background-color: white; border-radius: 20px; box-shadow: 5px 5px 5px 5px gray;">
 
         <div class="mySlides_2 fade fc-event_2 fc-h-event fc-daygrid-event fc-daygrid-block-event" style="text-align: center;margin-top: 10px;  height: 80px; background-color: white;">
-          <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">청년 월세 지원 마감</p></div>
+          <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">청년취업사관학교 조성 및 운영</p></div>
         </div>
         
         <div class="mySlides_2 fade fc-event_2 fc-h-event fc-daygrid-event fc-daygrid-block-event" style="text-align: center;margin-top: 10px; height: 80px; background-color: white;">
-          <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text"> 월세 지원 마감</p></div>
+          <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text"> 청년예술청 운영</p></div>
         </div>
         
         <div class="mySlides_2 fade fc-event_2 fc-h-event fc-daygrid-event fc-daygrid-block-event" style="text-align: center;margin-top: 10px; height: 80px; background-color: white;">
-          <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text"> 지원 마감</p></div>
+          <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text"> '청년 대중교통비 지원 사업</p></div>
         </div>
     
         <div class="mySlides_2 fade fc-event_2 fc-h-event fc-daygrid-event fc-daygrid-block-event" style="text-align: center;margin-top: 10px; height: 80px; background-color: white;">
-          <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text"> 마감</p></div>
+          <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text"> 청년 전세반환보증보험료 지원</p></div>
         </div>
     
         <div class="mySlides_2 fade fc-event_2 fc-h-event fc-daygrid-event fc-daygrid-block-event" style="text-align: center;margin-top: 10px; height: 80px; background-color: white;">
-          <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">감</p></div>
+          <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">서울 영테크</p></div>
         </div>
         <p style="display: none;">
           <input type='checkbox' id='drop-remove' />
@@ -245,7 +238,7 @@
             slideIndex_2++;
             if (slideIndex_2 > slides_2.length) {slideIndex_2 = 1}    
             slides_2[slideIndex_2-1].style.display = "block";  
-            setTimeout(showSlides_2, 2000); // Change image every 2 seconds
+            setTimeout(showSlides_2, 5000); // Change image every 2 seconds
           }
   </script>   
 <script>
@@ -261,7 +254,7 @@
       slideIndex_1++;
       if (slideIndex_1 > slides_1.length) {slideIndex_1 = 1}    
       slides_1[slideIndex_1-1].style.display = "block";  
-      setTimeout(showSlides_1, 2000); // Change image every 2 seconds
+      setTimeout(showSlides_1, 4000); 
     }
   </script>
 <script>
@@ -277,13 +270,15 @@
     slideIndex++;
     if (slideIndex > slides.length) {slideIndex = 1}    
     slides[slideIndex-1].style.display = "block";  
-    setTimeout(showSlides, 2000000); // Change image every 2 seconds
+    setTimeout(showSlides, 3000); 
   }
+  </script>
+  <script>
+  document.getElementsByClassName("fc-day-today").element.innerHTML = '<div style="backgroud-color: black; width; 100px;"><div>';
   </script>
   
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script type="module" src='cloling.js'></script>
+    
   </body>
 </html>
 
