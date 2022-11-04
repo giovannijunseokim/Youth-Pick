@@ -35,6 +35,10 @@ class MainFragment ():Fragment(){
             page.translationX = position * 150
         }
 
+        binding.btnDrawerOpener.setOnClickListener {
+            (activity as MainActivity).drawerOpen()
+        }
+
         return binding.root
     }
 

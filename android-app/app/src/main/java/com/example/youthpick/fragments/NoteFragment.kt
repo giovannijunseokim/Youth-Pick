@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.youthpick.MainActivity
 import com.example.youthpick.R
 import com.example.youthpick.databinding.FragmentCalendarBinding
 import com.example.youthpick.databinding.FragmentNoteBinding
@@ -20,6 +21,11 @@ class NoteFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentNoteBinding.inflate(inflater, container, false)
+
+        binding.btnDrawerOpener.setOnClickListener {
+            (activity as MainActivity).drawerOpen()
+        }
+
         return binding.root
     }
 

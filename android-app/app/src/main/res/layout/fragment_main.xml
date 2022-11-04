@@ -7,6 +7,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.MainFragment"
     android:background="@color/grey_50">
+    <ImageButton
+        android:id="@+id/btn_drawer_opener"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/btn_drawer_opener"
+        android:layout_margin="30dp"
+        android:backgroundTint="@color/white"
+        app:iconTint="@color/grey_600"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/layout_round_button"
+        android:elevation="5dp" />
+    <ImageButton
+        android:id="@+id/btn_user"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/btn_user"
+        android:layout_margin="30dp"
+        android:backgroundTint="@color/white"
+        app:iconTint="@color/grey_600"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/layout_round_button"
+        android:elevation="5dp"/>
 
     <TextView
         android:id="@+id/tv_main_fragment_description1"
@@ -15,7 +39,7 @@
         android:text="@string/main_fragment_description1"
         android:textSize="18sp"
         android:fontFamily="@font/apple_gothic_300"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_drawer_opener"
         android:layout_marginTop="20dp"
         android:layout_marginHorizontal="30dp"/>
     <TextView
