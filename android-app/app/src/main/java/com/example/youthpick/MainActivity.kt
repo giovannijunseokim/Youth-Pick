@@ -67,6 +67,8 @@ class MainActivity : AppCompatActivity() {
         val currentFragment = supportFragmentManager.findFragmentById(R.id.fragment_container_view)
         if(currentFragment == null) {
             supportFragmentManager.beginTransaction()
+                .setCustomAnimations(R.anim.fade_in, R.anim.fade_out,
+                    R.anim.fade_in, R.anim.fade_out)
                 .add(R.id.fragment_container_view, MainFragment())
                 .commit()
         }
@@ -75,24 +77,32 @@ class MainActivity : AppCompatActivity() {
         when(itemId) {
             R.id.item_main -> {
                 supportFragmentManager.beginTransaction()
+                    .setCustomAnimations(R.anim.fade_in, R.anim.fade_out,
+                        R.anim.fade_in, R.anim.fade_out)
                     .replace(R.id.fragment_container_view, MainFragment())
                     .commit()
                 return true
             }
             R.id.item_calendar -> {
                 supportFragmentManager.beginTransaction()
+                    .setCustomAnimations(R.anim.fade_in, R.anim.fade_out,
+                        R.anim.fade_in, R.anim.fade_out)
                     .replace(R.id.fragment_container_view, CalendarFragment())
                     .commit()
                 return true
             }
             R.id.item_chatbot -> {
                 supportFragmentManager.beginTransaction()
+                    .setCustomAnimations(R.anim.fade_in, R.anim.fade_out,
+                        R.anim.fade_in, R.anim.fade_out)
                     .replace(R.id.fragment_container_view, ChatbotFragment())
                     .commit()
                 return true
             }
             R.id.item_note -> {
                 supportFragmentManager.beginTransaction()
+                    .setCustomAnimations(R.anim.fade_in, R.anim.fade_out,
+                        R.anim.fade_in, R.anim.fade_out)
                     .replace(R.id.fragment_container_view, NoteFragment())
                     .commit()
                 return true
