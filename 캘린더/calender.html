@@ -140,7 +140,8 @@
   <body>
 
       <div id='calendar-container' style="width: 100%;">
-        <div id='calendar'></div>
+        <div id='calendar'>
+        </div>
  <!-- fisrt -->
 
   <div  id='external-events' class="slideshow-container" style="width: 80%; height: 100px; background-color: white; border-radius: 20px; margin-top: 30px; box-shadow: 5px 5px 5px 5px gray;">
@@ -273,11 +274,14 @@
     setTimeout(showSlides, 3000); 
   }
   </script>
-  <script>
-  document.getElementsByClassName("fc-day-today").element.innerHTML = '<div style="backgroud-color: black; width; 100px;"><div>';
-  </script>
+  
   
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <!-- <script>
+      const plusdiv = document.getElementsByClassName("fc-daygrid-day fc-day fc-day-wed fc-day-today");
+      plusdiv.innerHTML = '<div style="background-color: black; width; 100px;"><div>';
+      </script> -->
     
   </body>
 </html>
