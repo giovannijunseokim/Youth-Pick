@@ -20,6 +20,11 @@
         display: none;
       }
       </style>
+      <!--색상 변경 클래스 추가--><style>
+          .whiteClass{
+              background-color: #fac07e;
+          }
+      </style>
 </head>
 
 <body>
@@ -160,13 +165,24 @@
     <div style="width: 100%; height: 500px; background-color: antiquewhite; overflow-y: scroll;">
 
         <div id="JoffDisplay" >
-        <button type="button" value="0"  id="JselectButton">주거</button>
-        <button type="button" value="1"   id="JselectButton1">진로</button>
-        <button type="button" value="2"  id="JselectButton2">일자리</button>
-        <button type="button" value="3"  id="JselectButton3">창업</button>
-        <button type="button" value="4"  id="JselectButton4">교육</button>
-        <button type="button" value="5"  id="JselectButton5">금융</button>
-        <button type="button" value="6"  id="JselectButton6">+</button>
+        <button style="display: none;" type="button" value="0"  id="JselectButton0">주거</button>
+        <button style="display: none;" type="button" value="1"   id="JselectButton1">진로</button>
+        <button style="display: none;" type="button" value="2"  id="JselectButton2">일자리</button>
+        <button style="display: none;" type="button" value="3"  id="JselectButton3">창업</button>
+        <button style="display: none;" type="button" value="4"  id="JselectButton4">교육</button>
+        <button style="display: none;" type="button" value="5"  id="JselectButton5">금융</button>
+        <button  type="button" value="6"  id="JselectButton6">+</button>
+        </div>
+
+        <div id="policyPlus" style="display: none;">
+            <button type="button" value="5"  id="JPrevButton6" ><</button>
+            <div id="policyColorChange0" > 주거 </div>
+            <div id="policyColorChange1" > 진로 </div>
+            <div id="policyColorChange2" > 일자리 </div>
+            <div id="policyColorChange3" > 창업 </div>
+            <div id="policyColorChange4" > 교육 </div>
+            <div id="policyColorChange5" > 금융 </div>
+            <button id="policyAdd">추가하기</button>
         </div>
 
         <!-- select한거 마다 세부 이벤트들(정책들) -->
@@ -177,7 +193,6 @@
             <div id="testBtn1" class="popupStyle btn"></div>
             <div id="testBtn2" class="popupStyle btn"></div>
         </div>
-
         <div style="display: none;" id="JsecondDisplayOn"> 
             <button type="button" value="1"  id="JPrevButton1"><</button>
         </div>
@@ -193,7 +208,6 @@
         <div style="display: none;" id="JsixthDisplayOn"> 
             <button type="button" value="5"  id="JPrevButton5" ><</button>
     </div>
-
 
 <!-- 모달팝업 -->
       <div class="modal fade" id="testModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -229,9 +243,7 @@
               </div>
           </div>
       </div>
-    
     <!--json 데이터 추가하기--><script>
-          
           $(document).ready(function(){
 	            $.getJSON("ex.json",function(data){
 		            let member_data="";
@@ -248,6 +260,7 @@
                     $("#member_table").append(member_data);
                 });
             });
+            
     </script>
     <!-- 모달스크립트--><script>
         $('#testBtn, #testBtn1').click(function(e){
@@ -255,11 +268,63 @@
             $('#testModal').modal("show");
         });
     </script>
+
+<!--    아래 버튼 이벤트들      -->
+
+
+    <!--추가하기 버튼 동작--><script>
+        $(function(){
+            $("#policyAdd").click(function () {
+                for(var i=0; i<6;i++){
+                    if($("#policyColorChange"+i ).hasClass("whiteClass") == true)
+                    {
+                    $("#JselectButton"+i).show();
+                    console.log(i+"가 추가되었습니다.");
+                    } 
+                }
+                for(var i=0; i<6;i++){
+                    if($("#policyColorChange"+i ).hasClass("whiteClass") != true)
+                    {
+                    $("#JselectButton"+i).hide();
+                    } 
+                }
+                    $("#policyPlus").hide();
+                    $("#JoffDisplay").show();
+            });
+        });
+    </script>
+    <!--정책 선택 컬러 변경--><script>
+         $(function(){
+            $("#policyPlus:eq("+$(this).index()+") div").click(function () {
+                $(this).toggleClass("whiteClass");
+                // if($(this).css("background-color","white" )){
+                //     $(this).css("background-color", "gray");
+                // }
+            });
+        });
+    </script>
+    <!--+버튼 클릭시 화면 표시--><script>
+        $(function(){
+            $("#JselectButton6 ").click(function () {
+                    $("#policyPlus").show();
+                    $("#JoffDisplay").hide();
+            });
+        });
+
+    </script>
+    <!--+버튼 클릭후 뒤로가기 버튼 스크립트--><script>
+        $(function(){
+            $("#JPrevButton6 ").click(function () {
+                    $("#policyPlus").hide();
+                    $("#JoffDisplay").show();
+            });
+        });
+    </script>
     <!--버튼 열기 스크립트--><script>
         let number = ['first','second','third','fourth','fifth','sixth'];
     
             $(function(){
-            $("#JselectButton, #JselectButton1, #JselectButton2, #JselectButton3, #JselectButton4, #JselectButton5").click(function () {
+            $("#JselectButton0, #JselectButton1, #JselectButton2, #JselectButton3, #JselectButton4, #JselectButton5").click(function () {
                 var x = " ";
                   x = $(this).attr('value');
                 console.log(x);
