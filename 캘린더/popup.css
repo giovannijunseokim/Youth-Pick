@@ -1,0 +1,9 @@
+.popupStyle {
+  background-color: white;
+  width: 700px;
+  height: 80px;
+  border-radius: 15px;
+  margin: 10px auto;
+  box-shadow: #0000002e 0px 2px 20px;
+  display: block;
+}

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FullCalendar Example</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="vendor/css/fullcalendar.min.css" />
+    <link rel="stylesheet" href="vendor/css/bootstrap.min.css">
+    <link rel="stylesheet" href='vendor/css/select2.min.css' />
+    <link rel="stylesheet" href='vendor/css/bootstrap-datetimepicker.min.css' />
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/swiper.css">
+    <link rel="stylesheet" href="popup.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+    <!--스크롤바 제거--><style>
+    ::-webkit-scrollbar {
+        display: none;
+      }
+      </style>
+</head>
+
+<body>
+    
+    <div class="container">
+
+        <!-- 일자 클릭시 메뉴오픈 -->
+        <div id="contextMenu" class="dropdown clearfix">
+            <ul class="dropdown-menu dropNewEvent" role="menu" aria-labelledby="dropdownMenu"
+                style="display:block;position:static;margin-bottom:5px;">
+                <li><a tabindex="-1" href="#">일정 추가
+                </a></li>
+                <li class="divider"></li>
+                <li><a tabindex="-1" href="#" data-role="close">Close</a></li>
+            </ul>
+        </div>
+
+        <div id="wrapper">
+            <div id="loading"></div>
+            <div id="calendar"></div>
+        </div>
+        
+
+        <!-- 일정 추가 MODAL -->
+        <div class="modal fade" tabindex="-1" role="dialog" id="eventModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title"></h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="row" >
+                            <div class="col-xs-12">
+                                <label class="col-xs-4" for="edit-title">일정명</label>
+                                <input class="inputModal" type="text" name="edit-title" id="edit-title"
+                                    required="required" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <label class="col-xs-4" for="edit-start">시작</label>
+                                <input class="inputModal" type="text" name="edit-start" id="edit-start" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <label class="col-xs-4" for="edit-end">끝</label>
+                                <input class="inputModal" type="text" name="edit-end" id="edit-end" />
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <label class="col-xs-4" for="edit-color">색상</label>
+                                <select class="inputModal" name="color" id="edit-color">
+                                    <option value="#D25565" style="color:#D25565;">빨간색</option>
+                                    <option value="#9775fa" style="color:#9775fa;">보라색</option>
+                                    <option value="#ffa94d" style="color:#ffa94d;">주황색</option>
+                                    <option value="#74c0fc" style="color:#74c0fc;">파란색</option>
+                                    <option value="#f06595" style="color:#f06595;">핑크색</option>
+                                    <option value="#63e6be" style="color:#63e6be;">연두색</option>
+                                    <option value="#a9e34b" style="color:#a9e34b;">초록색</option>
+                                    <option value="#4d638c" style="color:#4d638c;">남색</option>
+                                    <option value="#495057" style="color:#495057;">검정색</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <label class="col-xs-4" for="edit-desc">설명</label>
+                                <textarea rows="4" cols="50" class="inputModal" name="edit-desc"
+                                    id="edit-desc"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer modalBtnContainer-addEvent">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+                        <button type="button" class="btn btn-primary" id="save-event">저장</button>
+                    </div>
+                    <div class="modal-footer modalBtnContainer-modifyEvent">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+                        <button type="button" class="btn btn-danger" id="deleteEvent">삭제</button>
+                        <button type="button" class="btn btn-primary" id="updateEvent">저장</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+
+        <div class="panel panel-default" style="display: none;">
+
+            <div class="panel-heading">
+                <h3 class="panel-title">필터</h3>
+            </div>
+
+            <div class="panel-body">
+
+                <div class="col-lg-6">
+                    <label for="calendar_view">구분별</label>
+                    <div class="input-group">
+                        <select class="filter" id="type_filter" multiple="multiple">
+                            <option value="카테고리1">카테고리1</option>
+                            <option value="카테고리2">카테고리2</option>
+                            <option value="카테고리3">카테고리3</option>
+                            <option value="카테고리4">카테고리4</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <label for="calendar_view">등록자별</label>
+                    <div class="input-group">
+                        <label class="checkbox-inline"><input class='filter' type="checkbox" value="정연"
+                                checked>정연</label>
+                        <label class="checkbox-inline"><input class='filter' type="checkbox" value="다현"
+                                checked>다현</label>
+                        <label class="checkbox-inline"><input class='filter' type="checkbox" value="사나"
+                                checked>사나</label>
+                        <label class="checkbox-inline"><input class='filter' type="checkbox" value="나연"
+                                checked>나연</label>
+                        <label class="checkbox-inline"><input class='filter' type="checkbox" value="지효"
+                                checked>지효</label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- /.filter panel -->
+    </div>
+    <!-- /.container -->
+
+   
+
+    <!-- +버튼 정책 추가하는 박스 -->
+    <div style="width: 100%; height: 500px; background-color: antiquewhite; overflow-y: scroll;">
+
+        <div id="JoffDisplay" >
+        <button type="button" value="0"  id="JselectButton">주거</button>
+        <button type="button" value="1"   id="JselectButton1">진로</button>
+        <button type="button" value="2"  id="JselectButton2">일자리</button>
+        <button type="button" value="3"  id="JselectButton3">창업</button>
+        <button type="button" value="4"  id="JselectButton4">교육</button>
+        <button type="button" value="5"  id="JselectButton5">금융</button>
+        <button type="button" value="6"  id="JselectButton6">+</button>
+        </div>
+
+        <!-- select한거 마다 세부 이벤트들(정책들) -->
+        <div>
+        <div style="display: none;" id="JfirstDisplayOn" > 
+            <div><button type="button" value="0"  id="JPrevButton" style="position:static"><</button></div>
+            <div id="testBtn" class="popupStyle btn"></div>
+            <div id="testBtn1" class="popupStyle btn"></div>
+            <div id="testBtn2" class="popupStyle btn"></div>
+        </div>
+
+        <div style="display: none;" id="JsecondDisplayOn"> 
+            <button type="button" value="1"  id="JPrevButton1"><</button>
+        </div>
+        <div style="display: none;" id="JthirdDisplayOn"> 
+            <button type="button" value="2"  id="JPrevButton2"><</button>
+        </div>
+        <div style="display: none;" id="JfourthDisplayOn"> 
+            <button type="button" value="3"  id="JPrevButton3"><</button>
+        </div>
+        <div style="display: none;" id="JfifthDisplayOn"> 
+            <button type="button" value="4"  id="JPrevButton4"><</button>
+        </div>
+        <div style="display: none;" id="JsixthDisplayOn"> 
+            <button type="button" value="5"  id="JPrevButton5" ><</button>
+    </div>
+
+
+<!-- 모달팝업 -->
+      <div class="modal fade" id="testModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                          <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      </button>
+                      <h3 class="modal-title" id="exampleModalLabel">서울 일자리</h5>
+                  </div>
+                  <div class="modal-body">
+                    <table class="table table-bordered" id="member_table">
+                        <thead>
+                            <tr>
+                                <th>정책유형</th>
+                                <th>정책소개</th>
+                                <th>주관기관</th>
+                                <th>지원내용</th>
+                                <th>사업운영기간</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" id="modalY" class="btn btn-primary" id="save-event">저장하기</button>
+                      <!-- <a class="btn" id="modalY" href="#">저장하기</a> -->
+                      <button class="btn" type="button" data-dismiss="modal">닫기</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+    
+    <!--json 데이터 추가하기--><script>
+          
+          $(document).ready(function(){
+	            $.getJSON("ex.json",function(data){
+		            let member_data="";
+		                $.each(data,function(key,value){
+			                console.log(key);
+			                        member_data+="<tr>";
+			                        member_data+="<td>"+value.정책유형+"</td>"
+                                    member_data+="<td>"+value.정책소개+"</td>"
+                                    member_data+="<td>"+value.주관기관+"</td>"
+                                    member_data+="<td>"+value.지원내용+"</td>"
+                                    member_data+="<td>"+value.사업운영기간+"</td>"
+                                    member_data+="</tr>";
+                    });
+                    $("#member_table").append(member_data);
+                });
+            });
+    </script>
+    <!-- 모달스크립트--><script>
+        $('#testBtn, #testBtn1').click(function(e){
+            e.preventDefault();
+            $('#testModal').modal("show");
+        });
+    </script>
+    <!--버튼 열기 스크립트--><script>
+        let number = ['first','second','third','fourth','fifth','sixth'];
+    
+            $(function(){
+            $("#JselectButton, #JselectButton1, #JselectButton2, #JselectButton3, #JselectButton4, #JselectButton5").click(function () {
+                var x = " ";
+                  x = $(this).attr('value');
+                console.log(x);
+                if($("#J"+number[x]+"DisplayOn").css("display") == "none"){
+                    $("#J"+number[x]+"DisplayOn").show();
+                    $("#JoffDisplay").hide();
+                }
+            });
+        });
+    </script>
+    <!--뒤로가기버튼 스크립트--><script>
+            $(function(){
+            $("#JPrevButton,#JPrevButton1,#JPrevButton2,#JPrevButton3,#JPrevButton4,#JPrevButton5").click(function () {
+                var y = " "
+                 y = $(this).attr('value');
+                console.log(y);
+                if($("#J"+number[y]+"DisplayOn").css("display") != "none"){
+                $("#J"+number[y]+"DisplayOn").hide();
+                $("#JoffDisplay").show();
+                }
+            });
+        });
+    </script>
+
+    <script src="vendor/js/jquery.min.js"></script>
+    <script src="vendor/js/bootstrap.min.js"></script>
+    <script src="vendor/js/moment.min.js"></script>
+    <script src="vendor/js/fullcalendar.min.js"></script>
+    <script src="vendor/js/ko.js"></script>
+    <script src="vendor/js/select2.min.js"></script>
+    <script src="vendor/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/addEvent.js"></script>
+    <script src="js/editEvent.js"></script>
+    <script src="js/etcSetting.js"></script>
+</body>
+
+</html>
