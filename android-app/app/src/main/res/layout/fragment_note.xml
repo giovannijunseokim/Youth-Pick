@@ -37,15 +37,16 @@
         app:layout_constraintTop_toBottomOf="@id/btn_drawer_opener"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/btn_add_memo"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp"
         android:padding="20dp"
         tools:listitem="@layout/item_memos" />
     <ImageButton
         android:id="@+id/btn_add_memo"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="20dp"
         android:padding="15dp"
         android:src="@drawable/btn_note_add"
         android:scaleType="fitXY"
@@ -55,8 +56,7 @@
         android:backgroundTint="@color/orange_400"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rv_memo"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

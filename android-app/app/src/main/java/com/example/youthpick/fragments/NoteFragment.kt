@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.youthpick.MainActivity
 import com.example.youthpick.R
@@ -25,16 +26,26 @@ class NoteFragment : Fragment() {
     ): View? {
         _binding = FragmentNoteBinding.inflate(inflater, container, false)
 
-        binding.btnDrawerOpener.setOnClickListener {
-            (activity as MainActivity).drawerOpen()
-        }
-
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initAdapter()
+        drawerOpener()
+        addMemo()
+    }
+
+    private fun addMemo() {
+        binding.btnAddMemo.setOnClickListener{
+            adapter.addMemoList()
+        }
+    }
+
+    private fun drawerOpener() {
+        binding.btnDrawerOpener.setOnClickListener {
+            (activity as MainActivity).drawerOpen()
+        }
     }
 
     private fun initAdapter() {

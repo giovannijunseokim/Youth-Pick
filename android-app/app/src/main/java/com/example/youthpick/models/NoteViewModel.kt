@@ -7,37 +7,34 @@ class NoteViewModel :ViewModel() {
     val itemList = listOf<NoteItem>(
         NoteItem(
             title = "김민종",
-            desc = "Cash in, cash out, cash in, cash out\n" +
-                    "Cash in, cash out, cash in, cash out\n" +
-                    "Cash out, cash out, cash out, cash out\n" +
-                    "Cash out, cash out, cash out, cash out\n" +
-                    "Cash in, cash out, cash in, cash out\n" +
-                    "Cash in, cash out, cash in, cash out\n" +
-                    "Cash out, cash out, cash out, cash out (21)"
+            desc = "동해 물과 백두산이 마르고 닳도록 " +
+                    "하느님이 보우하사 우리나라 만세." +
+                    "무궁화 삼천리 화려 강산 " +
+                    "대한 사람, 대한으로 길이 보전하세."
         ),
         NoteItem(
             title = "김준서",
-            desc = "Riding in the car with no keys (straight up)\n" +
-                    "Louis V shirt with no sleeves (on God)\n" +
-                    "Slaughter gang, nigga, I'm rep'ing (21)\n" +
-                    "Chopper get to preaching, I'm the reverend (21)"
+            desc = "남산 위에 저 소나무, 철갑을 두른 듯 " +
+                    "바람 서리 불변함은 우리 기상일세." +
+                    "무궁화 삼천리 화려 강산 " +
+                    "대한 사람, 대한으로 길이 보전하세."
         ),
         NoteItem(
             title = "김준섭",
-            desc = "Call him New Era, he capping (yeah)\n" +
-                    "Them the type of niggas I ain't dapping (on God)\n" +
-                    "When I book a show, make my backend cashing\n" +
-                    "21, Uncle Sam, dawg, I'm taxing"
+            desc = "가을 하늘 공활한데 높고 구름 없이 " +
+                    "밝은 달은 우리 가슴 일편단심일세." +
+                    "무궁화 삼천리 화려 강산 " +
+                    "대한 사람, 대한으로 길이 보전하세."
         ),
         NoteItem(
             title = "김재원",
-            desc = "Riding in the coupe and it's a sport (yeah)\n" +
-                    "My bodyguard look like a horse (straight up)\n" +
-                    "She gon' suck me up like it's a chore (on God)\n" +
-                    "Took the La Ferrari on a tour (21)"
+            desc = "이 기상과 이 맘으로 충성을 다하여 " +
+                    "괴로우나 즐거우나 나라 사랑하세." +
+                    "무궁화 삼천리 화려 강산 " +
+                    "대한 사람, 대한으로 길이 보전하세."
         ),
         NoteItem(
-            title = "테스트용 쥰내 긴 제목",
+            title = "테스트용 긴 제목 . . . ",
             desc = "설명 1"
         ),
         NoteItem(
