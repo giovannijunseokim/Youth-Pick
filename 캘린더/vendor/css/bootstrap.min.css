@@ -2378,10 +2378,7 @@ th {
 .table > thead:first-child > tr:first-child > td,
 .table > thead:first-child > tr:first-child > th {
   border-top: 0;
-  width: 100px;
-  /*준섭추가*/
 }
-
 .table > tbody + tbody {
   border-top: 2px solid #ddd;
 }
@@ -6315,10 +6312,9 @@ button.close {
 }
 @media (min-width: 768px) {
   .modal-dialog {
-    width: 1400px;
+    width: 600px;
     margin: 30px auto;
   }
-  /*준섭 width 수정, 추가*/
   .modal-content {
     -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
