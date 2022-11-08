@@ -13,12 +13,27 @@
     <link rel="stylesheet" href='vendor/css/bootstrap-datetimepicker.min.css' />
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/swiper.css">
-    <link rel="stylesheet" href="popup.css">
+    <link rel="stylesheet" href="css/popup.css">
     <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
     <!--스크롤바 제거--><style>
     ::-webkit-scrollbar {
         display: none;
       }
+      </style>
+      <!--색상 변경 클래스 추가--><style>
+          .whiteClass{
+              background-color: #fac07e;
+          }
+      </style>
+      <style>
+          #member_table tr th{
+            width: 200px;
+            padding: auto;
+          }
+          #member_table tr{
+              margin-top: 30px;
+              margin-bottom: 30px;
+          }
       </style>
 </head>
 
@@ -160,71 +175,74 @@
     <div style="width: 100%; height: 500px; background-color: antiquewhite; overflow-y: scroll;">
 
         <div id="JoffDisplay" >
-        <button type="button" value="0"  id="JselectButton">주거</button>
-        <button type="button" value="1"   id="JselectButton1">진로</button>
-        <button type="button" value="2"  id="JselectButton2">일자리</button>
-        <button type="button" value="3"  id="JselectButton3">창업</button>
-        <button type="button" value="4"  id="JselectButton4">교육</button>
-        <button type="button" value="5"  id="JselectButton5">금융</button>
-        <button type="button" value="6"  id="JselectButton6">+</button>
+        <button style="display: none;" type="button" value="0"  id="JselectButton0">주거</button>
+        <button style="display: none;" type="button" value="1"   id="JselectButton1">진로</button>
+        <button style="display: none;" type="button" value="2"  id="JselectButton2">일자리</button>
+        <button style="display: none;" type="button" value="3"  id="JselectButton3">창업</button>
+        <button style="display: none;" type="button" value="4"  id="JselectButton4">교육</button>
+        <button style="display: none;" type="button" value="5"  id="JselectButton5">금융</button>
+        <button  type="button" value="6"  id="JselectButton6">+</button>
+        </div>
+
+        <div id="policyPlus" style="display: none;">
+            <button type="button" value="5"  id="JPrevButton6" ><</button>
+            <div id="policyColorChange0" > 주거 </div> <!--색깔 변경 toggle함수를 통해 클래스 추가 (맨위에 style태그로 추가 되어있음)-->
+            <div id="policyColorChange1" > 진로 </div>
+            <div id="policyColorChange2" > 일자리 </div>
+            <div id="policyColorChange3" > 창업 </div>
+            <div id="policyColorChange4" > 교육 </div>
+            <div id="policyColorChange5" > 금융 </div>
+            <button id="policyAdd">추가하기</button>
         </div>
 
         <!-- select한거 마다 세부 이벤트들(정책들) -->
         <div>
         <div style="display: none;" id="JfirstDisplayOn" > 
             <div><button type="button" value="0"  id="JPrevButton" style="position:static"><</button></div>
-            <div id="testBtn" class="popupStyle btn"></div>
-            <div id="testBtn1" class="popupStyle btn"></div>
-            <div id="testBtn2" class="popupStyle btn"></div>
+            <button type="button" id="testBtn0" value="0" class="popupStyle btn"></button>
+            <button type="button" id="testBtn1" value="1" class="popupStyle btn"></button>
+            <button type="button" id="testBtn2" value="2" class="popupStyle btn"></button>
+            <button type="button" id="testBtn3" value="3" class="popupStyle btn"></button>
+            <button type="button" id="testBtn4" value="4" class="popupStyle btn"></button>
         </div>
-
         <div style="display: none;" id="JsecondDisplayOn"> 
-            <button type="button" value="1"  id="JPrevButton1"><</button>
+            <div><button type="button" value="1"  id="JPrevButton1"><</button></button></div>
+            <button type="button" id="testBtn5" value="5" class="popupStyle btn"></button>
         </div>
         <div style="display: none;" id="JthirdDisplayOn"> 
             <button type="button" value="2"  id="JPrevButton2"><</button>
+            <button type="button" id="testBtn6" value="6" class="popupStyle btn"></button>
+            <button type="button" id="testBtn7" value="7" class="popupStyle btn"></button>
+            <button type="button" id="testBtn8" value="8" class="popupStyle btn"></button>
+            <button type="button" id="testBtn9" value="9" class="popupStyle btn"></button>
+            <button type="button" id="testBtn10" value="10" class="popupStyle btn"></button>
+            <button type="button" id="testBtn11" value="11" class="popupStyle btn"></button>
         </div>
         <div style="display: none;" id="JfourthDisplayOn"> 
             <button type="button" value="3"  id="JPrevButton3"><</button>
+            <button type="button" id="testBtn12" value="12" class="popupStyle btn"></button>
+            <button type="button" id="testBtn13" value="13" class="popupStyle btn"></button>
         </div>
         <div style="display: none;" id="JfifthDisplayOn"> 
             <button type="button" value="4"  id="JPrevButton4"><</button>
+            <button type="button" id="testBtn14" value="14" class="popupStyle btn"></button>
         </div>
         <div style="display: none;" id="JsixthDisplayOn"> 
             <button type="button" value="5"  id="JPrevButton5" ><</button>
+            <button type="button" id="testBtn15" value="15" class="popupStyle btn"></button>
+            <button type="button" id="testBtn16" value="16" class="popupStyle btn"></button>
+            <button type="button" id="testBtn17" value="17" class="popupStyle btn"></button>
     </div>
-
 
 <!-- 모달팝업 -->
       <div class="modal fade" id="testModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
               <div class="modal-content">
                   <div class="modal-header">
-                      <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                          <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      </button>
-                      <h3 class="modal-title" id="exampleModalLabel">서울 일자리</h5>
+                      <h3 class="modal-title" id="exampleModalLabel"></h5>
                   </div>
                   <div class="modal-body">
                     <table class="table table-bordered" id="member_table">
-                        <thead>
-                            <tr>
-                                <th>정책유형</th>
-                                <th>주관기관</th>
-                                <th>사업운영기간</th>
-                                <th>사업신청기간</th>
-                                <th>지원규모</th>
-                                <th>정책소개</th>
-                                <th>지원내용</th>
-                                <th>제출서류</th>
-                                <th>관련사이트</th>
-                                <!--준섭 항목추가, 수정-->
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            
-                        </tbody>
                     </table>
                   </div>
                   <div class="modal-footer">
@@ -235,42 +253,121 @@
               </div>
           </div>
       </div>
-    
-    <!--json 데이터 추가하기--><script>
-          
-          $(document).ready(function(){
-	            $.getJSON("ex.json",function(data){
-		            let member_data="";
-		                $.each(data,function(key,value){
-			                console.log(key);
-			                        member_data+="<tr>";
-			                        member_data+="<td>"+value.정책유형+"</td>"
-                                    member_data+="<td>"+value.주관기관+"</td>"
-                                    member_data+="<td>"+value.사업운영기간+"</td>"
-                                    member_data+="<td>"+value.사업신청기간+"</td>"
-                                    member_data+="<td>"+value.지원규모+"</td>"
-                                    member_data+="<td>"+value.정책소개+"</td>"
-                                    member_data+="<td>"+value.지원내용+"</td>"
-                                    member_data+="<td>"+value.제출서류+"</td>"
-                                    member_data+="<td>"+value.관련사이트+"</td>"
-                                    member_data+="</tr>";
-                                    /*준섭 항목추가*/
-                    });
-                    $("#member_table").append(member_data);
-                });
+    <!--정책 이름 업로드 스크립트--><script>
+    window.onload =function(){
+        $.getJSON("ex.json", function(data){
+                for(var i =0;i <18;i++){
+                        let member_label_show = "";
+                                        member_label_show+=data[i].id;
+                        $("#testBtn"+i).append(member_label_show);
+                }
             });
+                
+    }
+    </script>
+
+    <!--정책 버튼 이름 추가하기--><script>
+    </script>
+    <!--json 데이터 추가하기--><script>
+        
+        // for(let i = 0 ; i<18 ; i ++){
+        //      var ids= "#testBtn"+i;
+        //      $(ids).click
+        // };
+        $('#testBtn0, #testBtn1, #testBtn2, #testBtn3, #testBtn4, #testBtn5, #testBtn6, #testBtn7, #testBtn8, #testBtn9, #testBtn10, #testBtn11, #testBtn12, #testBtn13, #testBtn14, #testBtn15, #testBtn16, #testBtn17').click(function(){
+        var numberData =  $(this).val();
+        console.log(numberData);
+        $.getJSON("ex.json", function(data){
+		            let member_data = "";
+                    let member_label = "";
+		                // $.each(data,function( key ,value){
+                            $("#member_table").empty();
+                            $("#exampleModalLabel").empty();
+                                    member_label+=data[numberData].id;
+			                        member_data+="<tr> <th>정책유형</th>",
+			                        member_data+="<td>"+data[numberData].정책유형+"</td> </tr>"
+                                    member_data+="<tr> <th>주관기관</th> <td>"+data[numberData].주관기관+"</td> </tr>"
+                                    member_data+="<tr> <th>사업운영기간</th> <td>"+data[numberData].사업운영기간+"</td> </tr>"
+                                    member_data+="<tr> <th>사업신청기간</th> <td>"+data[numberData].사업신청기간+"</td> </tr>"
+                                    member_data+="<tr> <th>지원규모</th> <td>"+data[numberData].지원규모+"</td> </tr>"
+                                    member_data+="<tr> <th>정책소개</th> <td>"+data[numberData].정책소개+"</td> </tr>"
+                                    member_data+="<tr> <th>지원내용</th> <td>"+data[numberData].지원내용+"</td> </tr>"
+                                    member_data+="<tr> <th>제출서류</th> <td>"+data[numberData].제출서류+"</td> </tr>"
+                                    member_data+="<tr> <th>관련사이트</th> <td>"+data[numberData].관련사이트+"</td>"
+                                    member_data+="</tr>";
+                                    console.log(member_data);
+                    // });
+                    $("#exampleModalLabel").append(member_label);
+                    $("#member_table").append(member_data);
+
+                });
+    });
     </script>
     <!-- 모달스크립트--><script>
-        $('#testBtn, #testBtn1').click(function(e){
+        $('#testBtn0, #testBtn1, #testBtn2, #testBtn3, #testBtn4, #testBtn5, #testBtn6, #testBtn7, #testBtn8, #testBtn9, #testBtn10, #testBtn11, #testBtn12, #testBtn13, #testBtn14, #testBtn15, #testBtn16, #testBtn17').click(function(e){
             e.preventDefault();
             $('#testModal').modal("show");
+        });
+    </script>
+
+
+
+<!--    아래 버튼 이벤트들      -->
+
+
+    <!--추가하기 버튼 동작--><script>
+        $(function(){
+            $("#policyAdd").click(function () {
+                for(var i=0; i<6;i++){
+                    if($("#policyColorChange"+i ).hasClass("whiteClass") == true)
+                    {
+                    $("#JselectButton"+i).show();
+                    console.log(i+"가 추가되었습니다.");
+                    } 
+                }
+                for(var i=0; i<6;i++){
+                    if($("#policyColorChange"+i ).hasClass("whiteClass") != true)
+                    {
+                    $("#JselectButton"+i).hide();
+                    } 
+                }
+                    $("#policyPlus").hide();
+                    $("#JoffDisplay").show();
+            });
+        });
+    </script>
+    <!--정책 선택 컬러 변경--><script>
+         $(function(){
+            $("#policyPlus:eq("+$(this).index()+") div").click(function () {
+                $(this).toggleClass("whiteClass");
+                // if($(this).css("background-color","white" )){
+                //     $(this).css("background-color", "gray");
+                // }
+            });
+        });
+    </script>
+    <!--+버튼 클릭시 화면 표시--><script>
+        $(function(){
+            $("#JselectButton6 ").click(function () {
+                    $("#policyPlus").show();
+                    $("#JoffDisplay").hide();
+            });
+        });
+
+    </script>
+    <!--+버튼 클릭후 뒤로가기 버튼 스크립트--><script>
+        $(function(){
+            $("#JPrevButton6 ").click(function () {
+                    $("#policyPlus").hide();
+                    $("#JoffDisplay").show();
+            });
         });
     </script>
     <!--버튼 열기 스크립트--><script>
         let number = ['first','second','third','fourth','fifth','sixth'];
     
             $(function(){
-            $("#JselectButton, #JselectButton1, #JselectButton2, #JselectButton3, #JselectButton4, #JselectButton5").click(function () {
+            $("#JselectButton0, #JselectButton1, #JselectButton2, #JselectButton3, #JselectButton4, #JselectButton5").click(function () {
                 var x = " ";
                   x = $(this).attr('value');
                 console.log(x);
