@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+   <link href='main.css' rel='stylesheet' />
+   <link href='swiper.css' rel='stylesheet' />
+   <script src='main.js'></script>
+    
+   <!-- 캘린더 -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth'
+        });
+        calendar.render();
+      });
+    </script>
+
+    <!-- 드래그 이벤트 세 종류 -->
+      <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var Calendar = FullCalendar.Calendar;
+        var Draggable = FullCalendar.Draggable;
+        var containerEl = document.getElementById('external-events');
+        var calendarEl = document.getElementById('calendar');
+        var checkbox = document.getElementById('drop-remove');
+    
+        // initialize the external events
+        // -----------------------------------------------------------------
+        new Draggable(containerEl, {
+          itemSelector: '.fc-event',
+          eventData: function(eventEl) {
+            return {
+              title: eventEl.innerText
+            };
+          }
+        });
+        // initialize the calendar
+        // -----------------------------------------------------------------
+        var calendar = new Calendar(calendarEl, {
+          headerToolbar: {
+            left: 'title',
+            center: '',
+            right: 'prev next'
+          },
+          editable: true,
+          droppable: true, // this allows things to be dropped onto the calendar
+          drop: function(info) {
+            // is the "remove after drop" checkbox checked?
+            if (checkbox.checked) {
+              // if so, remove the element from the "Draggable Events" list
+              info.draggedEl.parentNode.removeChild(info.draggedEl);
+            }
+          }
+        })
+        calendar.render();
+      });
+    
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var Calendar = FullCalendar.Calendar;
+        var Draggable = FullCalendar.Draggable;
+        var containerEl = document.getElementById('external-events_1');
+        var calendarEl = document.getElementById('calendar');
+        var checkbox = document.getElementById('drop-remove');
+    
+        // -----------------------------------------------------------------
+        new Draggable(containerEl, {
+          itemSelector: '.fc-event_1',
+          eventData: function(eventEl) {
+            return {
+              title: eventEl.innerText
+            };
+          }
+        });
+        // ------------------------------√-----------------------------------
+        var calendar = new Calendar(calendarEl, {
+          headerToolbar: {
+            left: ' " title ',
+            center: '',
+            right: 'prev next'
+          },
+          editable: true,
+          droppable: true, 
+          drop: function(info) {
+            if (checkbox.checked) {
+              info.draggedEl.parentNode.removeChild(info.draggedEl);
+            }
+          }
+        })
+        calendar.render();
+      });
+    
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var Calendar = FullCalendar.Calendar;
+        var Draggable = FullCalendar.Draggable;
+        var containerEl = document.getElementById('external-events_2');
+        var calendarEl = document.getElementById('calendar');
+        var checkbox = document.getElementById('drop-remove');
+    
+        // initialize the external events
+        // -----------------------------------------------------------------
+        new Draggable(containerEl, {
+          itemSelector: '.fc-event_2',
+          eventData: function(eventEl) {
+            return {
+              title: eventEl.innerText
+            };
+          }
+        });
+        // initialize the calendar
+        // -----------------------------------------------------------------
+        var calendar = new Calendar(calendarEl, {
+          headerToolbar: {
+            left: 'title',
+            center: '',
+            right: 'prev next'
+          },
+          editable: true,
+          droppable: true, // this allows things to be dropped onto the calendar
+          drop: function(info) {
+            // is the "remove after drop" checkbox checked?
+            if (checkbox.checked) {
+              // if so, remove the element from the "Draggable Events" list
+              info.draggedEl.parentNode.removeChild(info.draggedEl);
+            }
+          }
+        })
+        calendar.render();
+      });
+    
+    </script>
+
+
+  </head>
+  <body>
+
+      <div id='calendar-container' style="width: 100%;">
+        <div id='calendar'></div>
+ <!-- fisrt -->
+
+  <div  id='external-events' class="slideshow-container" style="width: 80%; height: 100px; background-color: white; border-radius: 20px; margin-top: 30px; box-shadow: 5px 5px 5px 5px gray;">
+
+    <div class="mySlides fade fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event colorsetting1" style="text-align: center;margin-top: 10px;  height: 80px; background-color: white !important; ">
+      <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">서울시 청년 월세 지원 마감</p></div>
+    </div>
+    
+    <div class="mySlides fade fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event" style="text-align: center;margin-top: 10px; height: 80px; background-color: white;">
+      <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">서울시 청년수당</p></div>
+    </div>
+    
+    <div class="mySlides fade fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event" style="text-align: center;margin-top: 10px; height: 80px; background-color: white;">
+      <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">서울형 뉴딜 일자리</p></div>    </div>
+
+    <div class="mySlides fade fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event" style="text-align: center;margin-top: 10px; height: 80px; background-color: white;">
+      <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">독립유공자 후손 장학금</p></div>    </div>
+
+    <div class="mySlides fade fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event" style="text-align: center;margin-top: 10px; height: 80px; background-color: white;">
+      <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">서울우수인재 장학금</p></div>    </div>
+    <p style="display: none;">
+      <input type='checkbox' id='drop-remove' />
+      <label for='drop-remove'>remove after drop</label>
+    </p>
+  </div>
+    <br>
+
+    <div  id='external-events_1' class="slideshow-container_1" style="width: 80%; height: 100px; background-color: white; border-radius: 20px; box-shadow: 5px 5px 5px 5px gray;">
+
+      <div class="mySlides_1 fade fc-event_1 fc-h-event fc-daygrid-event fc-daygrid-block-event" style="text-align: center;margin-top: 10px;  height: 80px; background-color: white;">
+        <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">서울시 청년부상제대군인지원사업</p></div>
+      </div>
+      
+      <div class="mySlides_1 fade fc-event_1 fc-h-event fc-daygrid-event fc-daygrid-block-event" style="text-align: center;margin-top: 10px; height: 80px; background-color: white;">
+        <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">천호사거리 지하 청년문화공간 조성 </p></div>
+      </div>
+      
+      <div class="mySlides_1 fade fc-event_1 fc-h-event fc-daygrid-event fc-daygrid-block-event" style="text-align: center;margin-top: 10px; height: 80px; background-color: white;">
+        <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">서울청년정책네트워크</p></div>
+      </div>
+  
+      <div class="mySlides_1 fade fc-event_1 fc-h-event fc-daygrid-event fc-daygrid-block-event" style="text-align: center;margin-top: 10px; height: 80px; background-color: white;">
+        <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">서울희망 대학 진로 장학금 </p></div>
+      </div>
+  
+      <div class="mySlides_1 fade fc-event_1 fc-h-event fc-daygrid-event fc-daygrid-block-event" style="text-align: center;margin-top: 10px; height: 80px; background-color: white;">
+        <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">청년 이사비 지원 </p></div>
+      </div>
+      <p style="display: none;">
+        <input type='checkbox' id='drop-remove' />
+        <label for='drop-remove'>remove after drop</label>
+      </p>
+    </div>
+      <br>
+
+      <div  id='external-events_2' class="slideshow-container_2" style="width: 80%; height: 100px; background-color: white; border-radius: 20px; box-shadow: 5px 5px 5px 5px gray;">
+
+        <div class="mySlides_2 fade fc-event_2 fc-h-event fc-daygrid-event fc-daygrid-block-event" style="text-align: center;margin-top: 10px;  height: 80px; background-color: white;">
+          <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">청년취업사관학교 조성 및 운영</p></div>
+        </div>
+        
+        <div class="mySlides_2 fade fc-event_2 fc-h-event fc-daygrid-event fc-daygrid-block-event" style="text-align: center;margin-top: 10px; height: 80px; background-color: white;">
+          <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text"> 청년예술청 운영</p></div>
+        </div>
+        
+        <div class="mySlides_2 fade fc-event_2 fc-h-event fc-daygrid-event fc-daygrid-block-event" style="text-align: center;margin-top: 10px; height: 80px; background-color: white;">
+          <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text"> '청년 대중교통비 지원 사업</p></div>
+        </div>
+    
+        <div class="mySlides_2 fade fc-event_2 fc-h-event fc-daygrid-event fc-daygrid-block-event" style="text-align: center;margin-top: 10px; height: 80px; background-color: white;">
+          <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text"> 청년 전세반환보증보험료 지원</p></div>
+        </div>
+    
+        <div class="mySlides_2 fade fc-event_2 fc-h-event fc-daygrid-event fc-daygrid-block-event" style="text-align: center;margin-top: 10px; height: 80px; background-color: white;">
+          <div class="fc-event-main" id="page1"><div id="block_icon"></div><p class = "text">서울 영테크</p></div>
+        </div>
+        <p style="display: none;">
+          <input type='checkbox' id='drop-remove' />
+          <label for='drop-remove'>remove after drop</label>
+        </p>
+      </div>
+        <br>
+    
+    
+<script>
+          var slideIndex_2 = 0;
+          showSlides_2();
+          
+          function showSlides_2() {
+            var i;
+            var slides_2 = document.getElementsByClassName("mySlides_2");
+            for (i = 0; i < slides_2.length; i++) {
+              slides_2[i].style.display = "none";  
+            }
+            slideIndex_2++;
+            if (slideIndex_2 > slides_2.length) {slideIndex_2 = 1}    
+            slides_2[slideIndex_2-1].style.display = "block";  
+            setTimeout(showSlides_2, 5000); // Change image every 2 seconds
+          }
+  </script>   
+<script>
+    var slideIndex_1 = 0;
+    showSlides_1();
+    
+    function showSlides_1() {
+      var i;
+      var slides_1 = document.getElementsByClassName("mySlides_1");
+      for (i = 0; i < slides_1.length; i++) {
+        slides_1[i].style.display = "none";  
+      }
+      slideIndex_1++;
+      if (slideIndex_1 > slides_1.length) {slideIndex_1 = 1}    
+      slides_1[slideIndex_1-1].style.display = "block";  
+      setTimeout(showSlides_1, 4000); 
+    }
+  </script>
+<script>
+  var slideIndex = 0;
+  showSlides();
+  
+  function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    slides[slideIndex-1].style.display = "block";  
+    setTimeout(showSlides, 3000); 
+  }
+  </script>
+  <script>
+  document.getElementsByClassName("fc-day-today").element.innerHTML = '<div style="backgroud-color: black; width; 100px;"><div>';
+  </script>
+  
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    
+  </body>
+</html>
+
+
+
+<!-- <script>
+  var slideIndex = 0;
+  showSlides();
+  
+  function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+  }
+  </script> 
+
+
+  <div style="text-align:center">
+        <span class="dot_1"></span> 
+        <span class="dot_1"></span> 
+        <span class="dot_1"></span> 
+        <span class="dot_1"></span> 
+        <span class="dot_1"></span> 
+      </div>
+    -->

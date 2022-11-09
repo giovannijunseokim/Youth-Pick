@@ -12,31 +12,6 @@
         tools:context=".MainActivity"
         android:background="@color/grey_50">
 
-        <ImageButton
-            android:id="@+id/btn_drawer_opener"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:src="@drawable/fab_drawer_opener"
-            android:layout_margin="30dp"
-            android:backgroundTint="@color/white"
-            app:iconTint="@color/grey_600"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:background="@drawable/layout_round_button"
-            android:elevation="5dp" />
-        <ImageButton
-            android:id="@+id/btn_user"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:src="@drawable/fab_user"
-            android:layout_margin="30dp"
-            android:backgroundTint="@color/white"
-            app:iconTint="@color/grey_600"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:background="@drawable/layout_round_button"
-            android:elevation="5dp"/>
-
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragment_container_view"
             android:layout_width="match_parent"
@@ -44,7 +19,7 @@
             app:layout_constraintBottom_toTopOf="@+id/bnv_main"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_drawer_opener" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bnv_main"
@@ -85,7 +60,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="유스픽 정책 캘린더"
-                android:layout_marginBottom="20dp"
+                android:padding="10dp"
                 android:textSize="16sp"
                 android:fontFamily="@font/apple_gothic_800"
                 android:textColor="@color/black"/>
@@ -94,7 +69,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="스픽 챗봇"
-                android:layout_marginBottom="20dp"
+                android:padding="10dp"
                 android:textSize="16sp"
                 android:fontFamily="@font/apple_gothic_800"
                 android:textColor="@color/black"/>
@@ -103,7 +78,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="정책 메모장"
-                android:layout_marginBottom="130dp"
+                android:padding="10dp"
+                android:layout_marginBottom="120dp"
                 android:textSize="16sp"
                 android:fontFamily="@font/apple_gothic_800"
                 android:textColor="@color/black"/>
@@ -111,25 +87,29 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="공지사항"
-                android:layout_marginBottom="15dp"
+                android:padding="10dp"
+                android:layout_marginBottom="5dp"
                 android:fontFamily="@font/apple_gothic_500"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="고객센터"
-                android:layout_marginBottom="15dp"
+                android:padding="10dp"
+                android:layout_marginBottom="5dp"
                 android:fontFamily="@font/apple_gothic_500"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="의견 보내기"
-                android:layout_marginBottom="15dp"
+                android:padding="10dp"
+                android:layout_marginBottom="5dp"
                 android:fontFamily="@font/apple_gothic_500"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="설정"
-                android:layout_marginBottom="15dp"
+                android:padding="10dp"
+                android:layout_marginBottom="5dp"
                 android:fontFamily="@font/apple_gothic_500"/>
         </LinearLayout>
     </com.google.android.material.navigation.NavigationView>

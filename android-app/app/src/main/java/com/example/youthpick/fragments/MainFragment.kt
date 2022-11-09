@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
 import com.example.youthpick.MainActivity
 import com.example.youthpick.R
@@ -13,6 +14,7 @@ import com.example.youthpick.databinding.FragmentMainBinding
 import com.example.youthpick.databinding.ItemPagesBinding
 import com.example.youthpick.models.PageItem
 import com.example.youthpick.models.PagerViewModel
+import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
 
 
 class MainFragment ():Fragment(){
@@ -33,6 +35,13 @@ class MainFragment ():Fragment(){
         binding.viewpager.setPadding(240, 0, 240, 0)
         binding.viewpager.setPageTransformer { page, position ->
             page.translationX = position * 150
+        }
+
+        val wormDotsIndicator = binding.wormDotsIndicator
+        wormDotsIndicator.attachTo(binding.viewpager)
+
+        binding.btnDrawerOpener.setOnClickListener {
+            (activity as MainActivity).drawerOpen()
         }
 
         return binding.root
