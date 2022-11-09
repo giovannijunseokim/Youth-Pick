@@ -10,8 +10,22 @@
   font-family: "gmarket_eng_500";
   src: url(gmarket_eng_500.ttf);
 }
+
+@font-face {
+  font-family: "nexon_b";
+  src: url(/css/NEXONLv1GothicBold.ttf);
+}
+@font-face {
+  font-family: "nexon_m";
+  src: url(/css/NEXONLv1GothicRegular.ttf);
+}
+@font-face {
+  font-family: "nexon_l";
+  src: url(/css/NEXONLv1GothicLight.ttf);
+}
+
 body {
-  font-family: "gmarket_eng_500";
+  font-family: "nexon_m";
   padding: 30px;
 }
 
@@ -124,8 +138,14 @@ body {
 }
 
 .fc-toolbar.fc-header-toolbar {
-  margin-bottom: 22px;
+  /* max-width: 30%; */
+  margin: 40px auto;
+  margin-bottom: 60px;
   padding-top: 22px;
+}
+
+.fc-day-number {
+  font-family: "nexon_b";
 }
 
 .fc-agenda-view .fc-day-grid .fc-row .fc-content-skeleton {
@@ -311,4 +331,199 @@ select.filter {
 #add-color,
 #edit-color {
   color: #d25565;
+}
+
+/*******************************************
+*        정책 선택 박스 관련 싹다;
+********************************************/
+
+#policyColorChange0 {
+  box-shadow: 0 4px 8px #c4c4c4;
+  font-size: 16px;
+  text-align: center;
+  line-height: 4em;
+  width: 40%;
+  height: 60px;
+  margin: 20px auto;
+  display: block;
+  /* background-color: #f4f4f4; */
+  border-radius: 12px;
+}
+#policyColorChange1 {
+  box-shadow: 0 4px 8px #c4c4c4;
+  font-size: 16px;
+  text-align: center;
+  line-height: 4em;
+  width: 40%;
+  height: 60px;
+  display: block;
+
+  margin: 20px auto;
+  /* background-color: #f4f4f4; */
+  border-radius: 12px;
+}
+#policyColorChange2 {
+  box-shadow: 0 4px 8px #c4c4c4;
+  font-size: 16px;
+  text-align: center;
+  line-height: 4em;
+  width: 40%;
+  height: 60px;
+  margin: 20px auto;
+  /* background-color: #f4f4f4; */
+  border-radius: 12px;
+}
+#policyColorChange3 {
+  box-shadow: 0 4px 8px #c4c4c4;
+  font-size: 16px;
+  text-align: center;
+  line-height: 4em;
+  width: 40%;
+  height: 60px;
+  margin: 20px auto;
+  /* background-color: #f4f4f4; */
+  border-radius: 12px;
+}
+#policyColorChange4 {
+  box-shadow: 0 4px 8px #c4c4c4;
+  font-size: 16px;
+  text-align: center;
+  line-height: 4em;
+  width: 40%;
+  height: 60px;
+  margin: 20px auto;
+  /* background-color: #f4f4f4; */
+  border-radius: 12px;
+}
+#policyColorChange5 {
+  box-shadow: 0 4px 8px #c4c4c4;
+  font-size: 16px;
+  text-align: center;
+  line-height: 4em;
+  width: 40%;
+  height: 60px;
+  margin: 20px auto;
+  /* background-color: #f4f4f4; */
+  border-radius: 12px;
+}
+
+#JselectButton6 {
+  display: block;
+  text-align: center;
+  margin: 30px auto;
+  width: 20%;
+  height: 60px;
+  border-radius: 40px;
+  border: none;
+  background-color: #fbe6c5;
+  font-size: 1em;
+}
+
+#JoffDisplay {
+  display: inline;
+}
+
+#JselectButton0 {
+  border-radius: 20px;
+  width: 60px;
+  font-size: 10px;
+  font-family: "nexon_b";
+  color: #f4a437;
+  height: 30px;
+  background-color: #fff;
+  border: 2px #f4a437 solid;
+}
+#JselectButton1 {
+  border-radius: 20px;
+  width: 60px;
+  font-size: 10px;
+  font-family: "nexon_b";
+  color: #f4a437;
+  height: 30px;
+  background-color: #fff;
+  border: 2px #f4a437 solid;
+}
+
+#JselectButton2 {
+  border-radius: 20px;
+  width: 60px;
+  font-size: 10px;
+  font-family: "nexon_b";
+  color: #f4a437;
+  height: 30px;
+  background-color: #fff;
+  border: 2px #f4a437 solid;
+}
+
+#JselectButton2 {
+  border-radius: 20px;
+  width: 60px;
+  font-size: 10px;
+  font-family: "nexon_b";
+  color: #f4a437;
+  height: 30px;
+  background-color: #fff;
+  border: 2px #f4a437 solid;
+}
+
+#JselectButton3 {
+  border-radius: 20px;
+  width: 60px;
+  font-size: 10px;
+  font-family: "nexon_b";
+  color: #f4a437;
+  height: 30px;
+  background-color: #fff;
+  border: 2px #f4a437 solid;
+}
+
+#JselectButton4 {
+  border-radius: 20px;
+  width: 60px;
+  font-size: 10px;
+  font-family: "nexon_b";
+  color: #f4a437;
+  height: 30px;
+  background-color: #fff;
+  border: 2px #f4a437 solid;
+}
+#JselectButton5 {
+  border-radius: 20px;
+  width: 60px;
+  font-size: 10px;
+  font-family: "nexon_b";
+  color: #f4a437;
+  height: 30px;
+  background-color: #fff;
+  border: 2px #f4a437 solid;
+}
+
+#JPrevButton6 {
+  background-color: #fbe6c5;
+  border: none;
+  width: 60px;
+  border-radius: 10px;
+  font-size: 10px;
+  height: 30px;
+}
+#JPrevButton1 {
+  background-color: #fbe6c5;
+  border: none;
+  width: 60px;
+  border-radius: 10px;
+  font-size: 10px;
+  height: 30px;
+}
+#policyAdd {
+  background-color: #fbe6c5;
+  border: none;
+  width: 40%;
+  display: block;
+  border-radius: 10px;
+  font-size: 10px;
+  height: 40px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "nexon_b";
+  color: black;
 }
