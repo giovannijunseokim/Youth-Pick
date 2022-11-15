@@ -55,6 +55,7 @@ body .fc {
 }
 .fc-state-default {
   border: none;
+  background-color: #fff;
   /* background-image: -moz-linear-gradient(top, #fff, #e6e6e6);
   background-image: -webkit-gradient(
     linear,
@@ -94,7 +95,7 @@ body .fc {
   background-color: #e6e6e6; */
 }
 .fc-state-hover {
-  color: #fff;
+  /* color: #fff; */
   text-decoration: none;
   background-position: 0 -15px;
   -webkit-transition: background-position 0.1s linear;
@@ -599,7 +600,8 @@ a.fc-more:hover {
 }
 .fc .fc-toolbar > * > * {
   float: left;
-  margin-left: 0.75em;
+  padding-top: 10px;
+  margin: 0 0.75em;
 }
 .fc .fc-toolbar > * > :first-child {
   margin-left: 0;

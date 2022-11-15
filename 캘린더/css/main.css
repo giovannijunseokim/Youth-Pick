@@ -24,6 +24,15 @@
   src: url(/css/NEXONLv1GothicLight.ttf);
 }
 
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 body {
   font-family: "nexon_m";
   padding: 30px;
@@ -142,6 +151,9 @@ body {
   margin: 40px auto;
   margin-bottom: 60px;
   padding-top: 22px;
+}
+.fc-toolbar.fc-header-toolbar > h2 {
+  padding-top: 10px;
 }
 
 .fc-day-number {
@@ -338,173 +350,247 @@ select.filter {
 ********************************************/
 
 #policyColorChange0 {
-  box-shadow: 0 4px 8px #c4c4c4;
+  box-shadow: 0 4px 8px #cecece;
   font-size: 16px;
   text-align: center;
   line-height: 4em;
-  width: 40%;
-  height: 60px;
-  margin: 20px auto;
-  display: block;
+  width: 45%;
+  height: 70px;
+  margin: 20px 10px;
+  display: inline-block;
   /* background-color: #f4f4f4; */
   border-radius: 12px;
 }
 #policyColorChange1 {
-  box-shadow: 0 4px 8px #c4c4c4;
+  box-shadow: 0 4px 8px #cecece;
   font-size: 16px;
   text-align: center;
   line-height: 4em;
-  width: 40%;
-  height: 60px;
-  display: block;
-
-  margin: 20px auto;
+  width: 45%;
+  height: 70px;
+  display: inline-block;
+  margin: 20px 10px;
+  /* margin: 20px auto; */
   /* background-color: #f4f4f4; */
   border-radius: 12px;
 }
 #policyColorChange2 {
-  box-shadow: 0 4px 8px #c4c4c4;
+  box-shadow: 0 4px 8px #cecece;
   font-size: 16px;
   text-align: center;
   line-height: 4em;
-  width: 40%;
-  height: 60px;
-  margin: 20px auto;
+  width: 45%;
+  height: 70px;
+  display: inline-block;
+  margin: 20px 10px;
+  /* margin: 20px auto; */
   /* background-color: #f4f4f4; */
   border-radius: 12px;
 }
 #policyColorChange3 {
-  box-shadow: 0 4px 8px #c4c4c4;
+  box-shadow: 0 4px 8px #cecece;
   font-size: 16px;
   text-align: center;
   line-height: 4em;
-  width: 40%;
-  height: 60px;
-  margin: 20px auto;
+  width: 45%;
+  height: 70px;
+  display: inline-block;
+  margin: 20px 10px;
+  /* margin: 20px auto; */
   /* background-color: #f4f4f4; */
   border-radius: 12px;
 }
 #policyColorChange4 {
-  box-shadow: 0 4px 8px #c4c4c4;
+  box-shadow: 0 4px 8px #cecece;
   font-size: 16px;
   text-align: center;
   line-height: 4em;
-  width: 40%;
-  height: 60px;
-  margin: 20px auto;
+  width: 45%;
+  height: 70px;
+  display: inline-block;
+  margin: 20px 10px;
+  /* margin: 20px auto; */
   /* background-color: #f4f4f4; */
   border-radius: 12px;
 }
 #policyColorChange5 {
-  box-shadow: 0 4px 8px #c4c4c4;
+  box-shadow: 0 4px 8px #cecece;
   font-size: 16px;
   text-align: center;
   line-height: 4em;
-  width: 40%;
+  width: 45%;
   height: 60px;
-  margin: 20px auto;
+  display: inline-block;
+  margin: 20px 10px;
+  /* margin: 20px auto; */
   /* background-color: #f4f4f4; */
   border-radius: 12px;
 }
 
 #JselectButton6 {
   display: block;
+  font-family: "nexon_b";
   text-align: center;
   margin: 30px auto;
-  width: 20%;
-  height: 60px;
-  border-radius: 40px;
+  width: 90%;
+  height: 80px;
+  border-radius: 12px;
   border: none;
-  background-color: #fbe6c5;
-  font-size: 1em;
+  box-shadow: 2px 4px 8px #e2e2e2;
+  background-color: #f4a437;
+  color: white;
+  font-size: 1.8em;
 }
+
+/*************************************************************
+******************* BUTTON POLICY CSS ************************
+*************************************************************/
 
 #JoffDisplay {
   display: inline;
+  text-align: center;
 }
 
 #JselectButton0 {
+  max-width: 768px;
   border-radius: 20px;
-  width: 60px;
-  font-size: 10px;
+  width: 40%;
+  font-size: 18px;
   font-family: "nexon_b";
-  color: #f4a437;
-  height: 30px;
+  color: #383838;
+  height: 460px;
   background-color: #fff;
-  border: 2px #f4a437 solid;
+  border: none;
+  box-shadow: 2px 4px 10px #c4c4c4;
+  text-align: center;
+  margin: 20px 50px;
 }
 #JselectButton1 {
+  max-width: 768px;
   border-radius: 20px;
-  width: 60px;
-  font-size: 10px;
+  width: 40%;
+  font-size: 18px;
   font-family: "nexon_b";
-  color: #f4a437;
-  height: 30px;
+  color: #383838;
+  height: 460px;
   background-color: #fff;
-  border: 2px #f4a437 solid;
+  border: none;
+  box-shadow: 2px 4px 10px #c4c4c4;
+  text-align: center;
+  margin: 20px 50px;
 }
 
 #JselectButton2 {
+  max-width: 768px;
   border-radius: 20px;
-  width: 60px;
-  font-size: 10px;
+  width: 40%;
+  font-size: 18px;
   font-family: "nexon_b";
-  color: #f4a437;
-  height: 30px;
+  color: #383838;
+  height: 460px;
   background-color: #fff;
-  border: 2px #f4a437 solid;
-}
-
-#JselectButton2 {
-  border-radius: 20px;
-  width: 60px;
-  font-size: 10px;
-  font-family: "nexon_b";
-  color: #f4a437;
-  height: 30px;
-  background-color: #fff;
-  border: 2px #f4a437 solid;
+  border: none;
+  box-shadow: 2px 4px 10px #c4c4c4;
+  text-align: center;
+  margin: 20px 50px;
 }
 
 #JselectButton3 {
+  max-width: 768px;
   border-radius: 20px;
-  width: 60px;
-  font-size: 10px;
+  width: 40%;
+  font-size: 18px;
   font-family: "nexon_b";
-  color: #f4a437;
-  height: 30px;
+  color: #383838;
+  height: 460px;
   background-color: #fff;
-  border: 2px #f4a437 solid;
+  border: none;
+  box-shadow: 2px 4px 10px #c4c4c4;
+  text-align: center;
+  margin: 20px 50px;
 }
 
 #JselectButton4 {
+  max-width: 768px;
   border-radius: 20px;
-  width: 60px;
-  font-size: 10px;
+  width: 40%;
+  font-size: 18px;
   font-family: "nexon_b";
-  color: #f4a437;
-  height: 30px;
+  color: #383838;
+  height: 460px;
   background-color: #fff;
-  border: 2px #f4a437 solid;
+  border: none;
+  box-shadow: 2px 4px 10px #c4c4c4;
+  text-align: center;
+  margin: 20px 50px;
 }
 #JselectButton5 {
+  max-width: 768px;
   border-radius: 20px;
-  width: 60px;
-  font-size: 10px;
+  width: 40%;
+  font-size: 18px;
   font-family: "nexon_b";
-  color: #f4a437;
-  height: 30px;
+  color: #383838;
+  height: 460px;
   background-color: #fff;
-  border: 2px #f4a437 solid;
+  border: none;
+  box-shadow: 2px 4px 10px #c4c4c4;
+  text-align: center;
+  margin: 20px 50px;
+}
+/* 일자리 1 / 금융복지 2 / 주거 3/ 진로 4 / 교육문화 5/ 창업 6 */
+#Jimg1 {
+  display: block;
+  width: 100%;
+  margin: 0px 0px 20px 0px;
+}
+#Jimg2 {
+  display: block;
+  width: 80%;
+  text-align: center;
+  /* margin: 0px 0px 20px 0px; */
+  margin-left: 40px;
+}
+#Jimg3 {
+  display: block;
+  width: 77%;
+  text-align: center;
+  /* margin: 0px 0px 20px 0px; */
+  margin-left: 40px;
+}
+#Jimg4 {
+  display: block;
+  width: 97%;
+  text-align: center;
+  margin: 0px 0px 20px 0px;
+  /* margin-left: 40px; */
+}
+#Jimg5 {
+  display: block;
+  width: 80%;
+  text-align: center;
+  /* margin: 0px 0px 20px 0px; */
+  margin-left: 40px;
+}
+#Jimg6 {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 0px 0px 20px 0px;
+  /* margin-left: 40px; */
 }
 
 #JPrevButton6 {
-  background-color: #fbe6c5;
+  font-family: "nexon_b";
+  color: white;
+  background-color: #f4a437;
+  height: 60px;
   border: none;
-  width: 60px;
+  width: 45%;
   border-radius: 10px;
   font-size: 10px;
-  height: 30px;
+  margin: 20px 10px;
+  display: inline-block;
 }
 #JPrevButton1 {
   background-color: #fbe6c5;
@@ -514,16 +600,30 @@ select.filter {
   font-size: 10px;
   height: 30px;
 }
+#policyPlus {
+  text-align: center;
+}
 #policyAdd {
-  background-color: #fbe6c5;
+  color: white;
+  background-color: #f4a437;
+  height: 60px;
   border: none;
-  width: 40%;
-  display: block;
+  width: 45%;
+  margin: 20px 10px;
   border-radius: 10px;
   font-size: 10px;
-  height: 40px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  display: inline-block;
   text-align: center;
   font-family: "nexon_b";
-  color: black;
+}
+
+/*******************************************************************
+************************ MEDIA QUERY SECTION ***********************
+*******************************************************************/
+
+@media screen and (max-width: 470px) {
+  * {
+    background-color: #2e2f34;
+  }
 }

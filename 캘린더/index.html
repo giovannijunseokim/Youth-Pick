@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/swiper.css">
     <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/mediaquery.css">
     <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
     <!--스크롤바 제거--><style>
     ::-webkit-scrollbar {
@@ -22,7 +23,9 @@
       </style>
       <!--색상 변경 클래스 추가--><style>
           .whiteClass{
-              border: 1px solid #fac07e;
+              border: 3px solid #fac07e;
+              color: #f4a437;
+              padding-top: -6px;
 
           }
       </style>
@@ -173,26 +176,35 @@
    
 
     <!-- +버튼 정책 추가하는 박스 -->
-    <div style="width: 100%; height: 500px; overflow-y: scroll;">
+    <div style="width: 100%; min-height: 800px; overflow-y: scroll; text-align: center;">
 
         <div id="JoffDisplay" >
-        <button style="display: none;" type="button" value="0"  id="JselectButton0">주거</button>
-        <button style="display: none;" type="button" value="1"   id="JselectButton1">진로</button>
-        <button style="display: none;" type="button" value="2"  id="JselectButton2">일자리</button>
-        <button style="display: none;" type="button" value="3"  id="JselectButton3">창업</button>
-        <button style="display: none;" type="button" value="4"  id="JselectButton4">교육</button>
-        <button style="display: none;" type="button" value="5"  id="JselectButton5">금융</button>
+            <!-- 일자리 1 / 금융복지 2 / 주거 3/ 진로 4 / 교육문화 5/ 창업 6-->
         <button  type="button" value="6"  id="JselectButton6">정책 선택</button>
+        <button style="display: none;" type="button" value="0"  id="JselectButton0">
+            <img src="/css/youp_home.png" id="Jimg3" />주거</button>
+        <button style="display: none;" type="button" value="1"   id="JselectButton1">
+            <img src="/css/youp_dream.png" id="Jimg4" />진로</button>
+        <button style="display: none;" type="button" value="2"  id="JselectButton2">
+            <img src="/css/working1.png" id="Jimg1" />일자리
+        </button>
+        <button style="display: none;" type="button" value="3"  id="JselectButton3">
+            <img src="/css/youp_op_store.png" id="Jimg6" />창업</button>
+        <button style="display: none;" type="button" value="4"  id="JselectButton4">
+            <img src="/css/youp_edu_n_cult.png" id="Jimg5" />교육 / 문화</button>
+        <button style="display: none;" type="button" value="5"  id="JselectButton5">
+            <img src="/css/cash_n_public.png" id="Jimg2" />금융 / 복지</button>
         </div>
 
         <div id="policyPlus" style="display: none;">
-            <button type="button" value="5"  id="JPrevButton6" ><</button>
+            
             <div id="policyColorChange0" > 주거 </div> <!--색깔 변경 toggle함수를 통해 클래스 추가 (맨위에 style태그로 추가 되어있음)-->
             <div id="policyColorChange1" > 진로 </div>
             <div id="policyColorChange2" > 일자리 </div>
             <div id="policyColorChange3" > 창업 </div>
             <div id="policyColorChange4" > 교육 </div>
             <div id="policyColorChange5" > 금융 </div>
+            <button type="button" value="5"  id="JPrevButton6" >뒤로가기</button>
             <button id="policyAdd">추가하기</button>
         </div>
 
@@ -350,8 +362,8 @@
     <!--+버튼 클릭시 화면 표시--><script>
         $(function(){
             $("#JselectButton6 ").click(function () {
-                    $("#policyPlus").show();
-                    $("#JoffDisplay").hide();
+                    $("#policyPlus").fadeIn(300, 'linear');
+                    $("#JoffDisplay").fadeOut(300, 'linear');
             });
         });
 
@@ -359,8 +371,8 @@
     <!--+버튼 클릭후 뒤로가기 버튼 스크립트--><script>
         $(function(){
             $("#JPrevButton6 ").click(function () {
-                    $("#policyPlus").hide();
-                    $("#JoffDisplay").show();
+                    $("#policyPlus").fadeOut(300,'linear');
+                    $("#JoffDisplay").fadeIn(300,'linear');
             });
         });
     </script>
@@ -386,7 +398,7 @@
                  y = $(this).attr('value');
                 console.log(y);
                 if($("#J"+number[y]+"DisplayOn").css("display") != "none"){
-                $("#J"+number[y]+"DisplayOn").hide();
+                $("#J"+number[y]+"DisplayOn").fadeOut(500);
                 $("#JoffDisplay").show();
                 }
             });
