@@ -6,11 +6,11 @@
         android:id="@+id/item_main" />
     <item android:title="@string/fragment_calendar"
         android:id="@+id/item_calendar"
-        android:icon="@drawable/calender_nav"/>
+        android:icon="@drawable/ic_calender_nav"/>
     <item android:title="@string/fragment_chatbot"
         android:id="@+id/item_chatbot"
-        android:icon="@drawable/talk_nav"/>
+        android:icon="@drawable/ic_talk_nav"/>
     <item android:title="@string/fragment_note"
         android:id="@+id/item_note"
-        android:icon="@drawable/memo_nav"/>
+        android:icon="@drawable/ic_memo_nav"/>
 </menu>
