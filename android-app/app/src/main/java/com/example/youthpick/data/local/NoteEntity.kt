@@ -7,6 +7,6 @@ import androidx.room.PrimaryKey
 data class NoteEntity(
     @PrimaryKey(autoGenerate = true)
     var id : Long?,
-    var memoTitle : String = "",
-    var memoDesc : String = ""
+    var noteTitle : String = "",
+    var noteDesc : String = ""
 )
