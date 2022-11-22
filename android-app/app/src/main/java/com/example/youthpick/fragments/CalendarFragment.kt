@@ -31,9 +31,14 @@ class CalendarFragment :Fragment(){
     private fun setWebView() {
         binding.wvCalendar.apply{
             webViewClient = WebViewClient()
-            settings.javaScriptEnabled = true
+            settings.javaScriptEnabled = true;
+            settings.setUseWideViewPort(true);       // wide viewport를 사용하도록 설정
+            settings.setLoadWithOverviewMode(true);  // 컨텐츠가 웹뷰보다 클 경우 스크린 크기에 맞게 조정
+            // 웹뷰 멀티 터치 가능하게 (줌기능)
+//            settings.setBuiltInZoomControls(true);   // 줌 아이콘 사용
+//            settings.setSupportZoom(true);
         }
-        binding.wvCalendar.loadUrl("https://naver.com")
+        binding.wvCalendar.loadUrl("https://kim-junseop.github.io/")
     }
 
     override fun onDestroyView() {
