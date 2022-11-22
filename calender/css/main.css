@@ -39,7 +39,7 @@ body {
 }
 
 .dropNewEvent {
-  font-size: 13px;
+  font-size: 28px;
 }
 
 .popoverTitleCalendar {
@@ -86,6 +86,7 @@ body {
 .inputModal {
   width: 65%;
   margin-bottom: 10px;
+  height: 90px;
 }
 
 #contextMenu {
@@ -345,8 +346,11 @@ select.filter {
 #add-color,
 #edit-color {
   color: #d25565;
+  height: 60px;
 }
-
+#edit-desc {
+  height: 258px;
+}
 /*******************************************
 *        정책 선택 박스 관련 싹다;
 ********************************************/

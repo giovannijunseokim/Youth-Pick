@@ -35,7 +35,7 @@
     </style>
     <style>
       #member_table tr th {
-        width: 200px;
+        min-width: 210px;
         padding: auto;
       }
       #member_table tr {
@@ -573,10 +573,9 @@
             data[numberData].제출서류 +
             "</td> </tr>";
           member_data +=
-            "<tr> <th>관련사이트</th> <td><a href=" +
+            '<tr> <th>관련사이트</th> <td><a style="max-width : 560px" href=' +
             data[numberData].관련사이트 +
-            ">" +
-            data[numberData].관련사이트 +
+            "> 바로가기 " +
             "</a></td>";
           member_data += "</tr>";
           console.log(member_data);
