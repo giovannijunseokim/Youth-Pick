@@ -489,7 +489,7 @@ a.fc-more:hover {
 .fc-icon {
   height: 1em;
   line-height: 1em;
-  font-size: 1em;
+  font-size: 36px;
   font-family: "Courier New", Courier, monospace;
   -webkit-user-select: none;
   -moz-user-select: none;

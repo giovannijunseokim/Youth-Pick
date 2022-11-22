@@ -1182,7 +1182,7 @@ h5,
 h6 {
   font-family: inherit;
   font-weight: 500;
-  line-height: 1.1;
+  line-height: 40px;
   color: inherit;
 }
 .h1 .small,
@@ -1265,11 +1265,11 @@ h1 {
 }
 .h2,
 h2 {
-  font-size: 30px;
+  font-size: 46px;
 }
 .h3,
 h3 {
-  font-size: 24px;
+  font-size: 32px;
 }
 .h4,
 h4 {
@@ -1583,6 +1583,7 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  min-height: 700px;
 }
 @media (min-width: 768px) {
   .container {
@@ -2392,6 +2393,7 @@ th {
 }
 .table-bordered {
   border: 1px solid #ddd;
+  height: 532px;
 }
 .table-bordered > tbody > tr > td,
 .table-bordered > tbody > tr > th,
@@ -3095,7 +3097,7 @@ textarea.input-lg {
   display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
-  font-size: 14px;
+  font-size: 28px;
   font-weight: 400;
   line-height: 1.42857143;
   text-align: center;
@@ -3206,8 +3208,8 @@ fieldset[disabled] .btn-default:hover {
 }
 .btn-primary {
   color: #fff;
-  background-color: #337ab7;
-  border-color: #2e6da4;
+  background-color: #f4a437;
+  border-color: #f4a437;
 }
 .btn-primary.focus,
 .btn-primary:focus {
@@ -6242,13 +6244,15 @@ button.close {
   margin: 10px;
 }
 .modal-content {
+  width: 850px;
+  height: 726px;
   position: relative;
   background-color: #fff;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
   border: 1px solid #999;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
+  border-radius: 20px;
   outline: 0;
   -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
@@ -6273,6 +6277,8 @@ button.close {
 .modal-header {
   padding: 15px;
   border-bottom: 1px solid #e5e5e5;
+  border-radius: 16px 16px 0 0;
+  background-color: #fbe6c5;
 }
 .modal-header .close {
   margin-top: -2px;
@@ -6284,6 +6290,9 @@ button.close {
 .modal-body {
   position: relative;
   padding: 15px;
+  height: 560px;
+  font-size: 1.8rem;
+  overflow-y: scroll;
 }
 .modal-footer {
   padding: 15px;
@@ -6309,8 +6318,8 @@ button.close {
 }
 @media (min-width: 768px) {
   .modal-dialog {
-    width: 600px;
-    margin: 30px auto;
+    width: 840px;
+    margin: 460px auto;
   }
   .modal-content {
     -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
