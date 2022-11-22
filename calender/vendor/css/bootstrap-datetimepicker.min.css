@@ -9,7 +9,9 @@
 .bootstrap-datetimepicker-widget.dropdown-menu {
   margin: 2px 0;
   padding: 4px;
-  width: 19em;
+  width: 480px;
+  height: 300px;
+  font-size: 22px;
 }
 @media (min-width: 768px) {
   .bootstrap-datetimepicker-widget.dropdown-menu.timepicker-sbs {
@@ -353,7 +355,7 @@
   line-height: 27px;
 }
 .bootstrap-datetimepicker-widget.wider {
-  width: 21em;
+  width: 41em;
 }
 .bootstrap-datetimepicker-widget .datepicker-decades .decade {
   line-height: 1.8em !important;

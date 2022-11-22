@@ -181,8 +181,10 @@ table {
 }
 td,
 th {
+  max-width: 560px;
   padding: 0;
 } /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
+
 @media print {
   *,
   :after,
@@ -1679,6 +1681,7 @@ pre code {
 }
 .col-xs-12 {
   width: 100%;
+  height: 138px;
 }
 .col-xs-11 {
   width: 91.66666667%;
@@ -1703,6 +1706,8 @@ pre code {
 }
 .col-xs-4 {
   width: 33.33333333%;
+  font-size: 34px;
+  line-height: 66px;
 }
 .col-xs-3 {
   width: 25%;
@@ -2393,7 +2398,7 @@ th {
 }
 .table-bordered {
   border: 1px solid #ddd;
-  height: 532px;
+  height: 894px;
 }
 .table-bordered > tbody > tr > td,
 .table-bordered > tbody > tr > th,
@@ -3617,7 +3622,7 @@ tbody.collapse.in {
   z-index: 1000;
   display: none;
   float: left;
-  min-width: 160px;
+  min-width: 240px;
   padding: 5px 0;
   margin: 2px 0 0;
   font-size: 14px;
@@ -6245,7 +6250,7 @@ button.close {
 }
 .modal-content {
   width: 850px;
-  height: 726px;
+  height: 1100px;
   position: relative;
   background-color: #fff;
   -webkit-background-clip: padding-box;
@@ -6290,8 +6295,8 @@ button.close {
 .modal-body {
   position: relative;
   padding: 15px;
-  height: 560px;
-  font-size: 1.8rem;
+  height: 932px;
+  font-size: 30px;
   overflow-y: scroll;
 }
 .modal-footer {
@@ -6319,7 +6324,7 @@ button.close {
 @media (min-width: 768px) {
   .modal-dialog {
     width: 840px;
-    margin: 460px auto;
+    margin: 320px auto;
   }
   .modal-content {
     -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
