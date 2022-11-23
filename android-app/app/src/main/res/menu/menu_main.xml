@@ -4,12 +4,12 @@
         android:title="@string/fragment_main"
         android:icon="@drawable/home_nav"
         android:id="@+id/item_main" />
+    <item android:title="@string/fragment_search"
+        android:id="@+id/item_search"
+        android:icon="@drawable/ic_search_nav"/>
     <item android:title="@string/fragment_calendar"
         android:id="@+id/item_calendar"
         android:icon="@drawable/ic_calender_nav"/>
-    <item android:title="@string/fragment_chatbot"
-        android:id="@+id/item_chatbot"
-        android:icon="@drawable/ic_talk_nav"/>
     <item android:title="@string/fragment_note"
         android:id="@+id/item_note"
         android:icon="@drawable/ic_memo_nav"/>

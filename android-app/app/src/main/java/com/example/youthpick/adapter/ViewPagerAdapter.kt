@@ -41,8 +41,8 @@ class ViewPagerAdapter(context : Context) : RecyclerView.Adapter<ViewPagerAdapte
                 when (position) {
                     0 -> {activity.changeFragment(R.id.item_calendar)
                         activity.binding.bnvMain.selectedItemId = R.id.item_calendar }
-                    1 -> {activity.changeFragment(R.id.item_chatbot)
-                        activity.binding.bnvMain.selectedItemId = R.id.item_chatbot}
+                    1 -> {activity.changeFragment(R.id.item_search)
+                        activity.binding.bnvMain.selectedItemId = R.id.item_search}
                     2 -> {activity.changeFragment(R.id.item_note)
                         activity.binding.bnvMain.selectedItemId = R.id.item_note}
                     else -> Log.d("GIO", "error")

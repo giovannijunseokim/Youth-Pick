@@ -5,14 +5,15 @@ import android.os.Bundle
 import android.view.Gravity
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.youthpick.data.local.NoteDatabase
+import com.example.youthpick.data.local.NoteEntity
 import com.example.youthpick.databinding.ActivityMainBinding
-import com.example.youthpick.databinding.FragmentCalendarBinding
-import com.example.youthpick.databinding.FragmentMainBinding
 import com.example.youthpick.fragments.CalendarFragment
-import com.example.youthpick.fragments.ChatbotFragment
+import com.example.youthpick.fragments.SearchFragment
 import com.example.youthpick.fragments.MainFragment
 import com.example.youthpick.fragments.NoteFragment
-import com.google.android.material.snackbar.Snackbar
+import kotlinx.coroutines.NonDisposableHandle.parent
+import kotlin.concurrent.thread
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding : ActivityMainBinding
@@ -27,8 +28,7 @@ class MainActivity : AppCompatActivity() {
         binding.bnvMain.setOnItemSelectedListener { item ->
             changeFragment(item.itemId)
         }
-
-        navigationClickEvent(binding)
+        selectNavigationListener()
     }
 
     override fun onBackPressed() {
@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun navigationClickEvent(binding: ActivityMainBinding) {
+    private fun selectNavigationListener() {
         binding.ivDrawerLogo.setOnClickListener {
             changeFragment(R.id.item_main)
             binding.bnvMain.selectedItemId = R.id.item_main
@@ -52,8 +52,8 @@ class MainActivity : AppCompatActivity() {
             drawerClose()
         }
         binding.tvDrawerChatbot.setOnClickListener {
-            changeFragment(R.id.item_chatbot)
-            binding.bnvMain.selectedItemId = R.id.item_chatbot
+            changeFragment(R.id.item_search)
+            binding.bnvMain.selectedItemId = R.id.item_search
             drawerClose()
         }
         binding.tvDrawerNote.setOnClickListener {
@@ -91,11 +91,11 @@ class MainActivity : AppCompatActivity() {
                     .commit()
                 return true
             }
-            R.id.item_chatbot -> {
+            R.id.item_search -> {
                 supportFragmentManager.beginTransaction()
                     .setCustomAnimations(R.anim.fade_in, R.anim.fade_out,
                         R.anim.fade_in, R.anim.fade_out)
-                    .replace(R.id.fragment_container_view, ChatbotFragment())
+                    .replace(R.id.fragment_container_view, SearchFragment())
                     .commit()
                 return true
             }
@@ -116,5 +116,9 @@ class MainActivity : AppCompatActivity() {
     }
     private fun drawerClose(){
         binding.drawer.closeDrawer(Gravity.LEFT)
+    }
+    companion object{
+        val title = "title"
+        val desc = "desc"
     }
 }
