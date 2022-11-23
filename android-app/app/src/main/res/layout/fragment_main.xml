@@ -7,30 +7,48 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.MainFragment"
     android:background="@color/grey_50">
-    <ImageButton
+
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/btn_drawer_opener"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:src="@drawable/btn_drawer_opener"
+        app:strokeColor="@color/grey_300"
+        app:strokeWidth="1dp"
         android:layout_margin="30dp"
-        android:backgroundTint="@color/white"
-        app:iconTint="@color/grey_600"
+        app:cardCornerRadius="20dp"
+        app:rippleColor="@android:color/transparent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/layout_round_button"
-        android:elevation="5dp" />
-    <ImageButton
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageButton
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/layout_round_button"
+            android:scaleType="centerInside"
+            android:padding="5dp"
+            android:src="@drawable/ic_drawer_opener"
+            app:iconTint="@color/grey_600" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/btn_user"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:src="@drawable/btn_user"
+        app:strokeColor="@color/grey_300"
+        app:strokeWidth="1dp"
         android:layout_margin="30dp"
-        android:backgroundTint="@color/white"
-        app:iconTint="@color/grey_600"
-        app:layout_constraintTop_toTopOf="parent"
+        app:cardCornerRadius="20dp"
+        app:rippleColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/layout_round_button"
-        android:elevation="5dp"/>
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageButton
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_user"
+            android:background="@drawable/layout_round_button"
+            android:scaleType="centerInside"
+            android:padding="5dp"
+            app:iconTint="@color/grey_600" />
+    </com.google.android.material.card.MaterialCardView>
 
     <TextView
         android:id="@+id/tv_main_fragment_description1"
@@ -57,7 +75,7 @@
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:layout_marginVertical="30dp"
-        android:layout_marginHorizontal="30dp"
+        android:layout_marginHorizontal="0dp"
         app:layout_constraintTop_toBottomOf="@id/tv_main_fragment_description2"
         tools:layout_editor_absoluteX="40dp">
         <androidx.appcompat.widget.SearchView
@@ -65,6 +83,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginVertical="5dp"
+            android:layout_marginStart="30dp"
             android:layout_marginEnd="40dp"
             app:iconifiedByDefault="false"
             app:queryHint="Search"
@@ -76,21 +95,28 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/btn_search_setting"
             android:layout_width="55dp"
             android:layout_height="55dp"
-            android:padding="15dp"
-            android:src="@drawable/search_setting"
-            android:scaleType="fitXY"
+            android:layout_marginEnd="30dp"
             app:iconTint="@color/grey_600"
-            android:background="@drawable/layout_round_button"
-            android:elevation="5dp"
-            android:backgroundTint="@color/orange_400"
+            app:cardElevation="5dp"
+            android:backgroundTint="@color/youthpick_orange"
+            app:cardCornerRadius="27dp"
+            android:clickable="true"
+            app:rippleColor="@color/grey_200"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/search_view"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_search_shortcut"
+                    android:layout_gravity="center"
+                    android:padding="15dp"/>
+        </com.google.android.material.card.MaterialCardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.viewpager2.widget.ViewPager2
@@ -111,8 +137,8 @@
         android:id="@+id/worm_dots_indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:dotsColor="@color/orange_400"
-        app:dotsStrokeColor="@color/orange_400"
+        app:dotsColor="@color/youthpick_orange"
+        app:dotsStrokeColor="@color/youthpick_orange"
         app:dotsCornerRadius="8dp"
         app:dotsSize="12dp"
         app:dotsSpacing="4.5dp"

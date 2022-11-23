@@ -5,19 +5,28 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.youthpick.MainActivity
-import com.example.youthpick.R
 import com.example.youthpick.adapter.NoteRecyclerViewAdapter
-import com.example.youthpick.databinding.FragmentCalendarBinding
+import com.example.youthpick.data.local.NoteDatabase
+import com.example.youthpick.data.local.NoteEntity
 import com.example.youthpick.databinding.FragmentNoteBinding
+import kotlin.concurrent.thread
 
 class NoteFragment : Fragment() {
     private var _binding: FragmentNoteBinding? = null
     private val binding: FragmentNoteBinding
         get() = requireNotNull(_binding){"binding이 널임"}
-    private val adapter by lazy { NoteRecyclerViewAdapter(requireContext()) }
+    private val adapter by lazy { NoteRecyclerViewAdapter(requireContext(),
+        deleteNote, changeNote , requireActivity()) }
+
+    lateinit var db: NoteDatabase
+    var noteList: List<NoteEntity> = listOf()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        db = NoteDatabase.getInstance(requireContext())!!
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,34 +34,70 @@ class NoteFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentNoteBinding.inflate(inflater, container, false)
-
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initAdapter()
-        drawerOpener()
-        addMemo()
-    }
 
-    private fun addMemo() {
-        binding.btnAddMemo.setOnClickListener{
-            adapter.addMemoList()
-        }
-    }
-
-    private fun drawerOpener() {
         binding.btnDrawerOpener.setOnClickListener {
             (activity as MainActivity).drawerOpen()
+        }
+
+        binding.btnAddMemo.setOnClickListener {
+            addMemo()
         }
     }
 
     private fun initAdapter() {
+        getAllNotes()
+        adapter.setMemoList(noteList)
         binding.rvMemo.adapter = adapter
         val manager = GridLayoutManager(activity,2)
         binding.rvMemo.layoutManager = manager
-        adapter.setMemoList()
+    }
+
+    private fun addMemo() {
+        val note = NoteEntity(null,"Test","description")
+        insertNote(note)
+    }
+
+    fun insertNote(note : NoteEntity){
+        val addTask = thread(true){
+            db.noteDAO().insert(note)
+        }
+        addTask.join()
+        getAllNotes()
+        adapter.setMemoList(noteList)
+    }
+
+    private val changeNote : (Int) -> Unit = { position ->
+        val note = noteList[position]
+        note.noteTitle = "수정된 제목"
+        note.noteDesc = "수정된 설명"
+        val changeTask = thread{
+            db.noteDAO().insert(note)
+        }
+        changeTask.join()
+        getAllNotes()
+        adapter.setMemoList(noteList)
+    }
+
+    private val deleteNote : (Int) -> Unit = { position ->
+        val deleteTask = thread(true){
+            db.noteDAO().delete(noteList[position])
+        }
+        deleteTask.join()
+        getAllNotes()
+        adapter.setMemoList(noteList)
+    }
+
+    fun getAllNotes(){
+        val getTask = thread(true){
+            noteList = db.noteDAO().getAllNote()
+        }
+        getTask.join()
     }
 
     override fun onDestroyView() {

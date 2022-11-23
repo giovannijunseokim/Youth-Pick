@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:menu="@menu/menu_main"
-            app:itemRippleColor="@color/orange_300"
+            app:itemRippleColor="@color/youthpick_orange"
             app:labelVisibilityMode="unlabeled"
             app:itemIconSize="20dp"
             app:itemIconTint="@drawable/menu_selector_color"/>
@@ -40,7 +40,6 @@
         android:layout_gravity="start"
         android:background="@color/grey_50" >
         <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/grey_50"

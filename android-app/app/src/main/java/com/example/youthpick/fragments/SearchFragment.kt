@@ -5,13 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.youthpick.R
-import com.example.youthpick.databinding.FragmentCalendarBinding
-import com.example.youthpick.databinding.FragmentChatbotBinding
+import com.example.youthpick.databinding.FragmentSearchBinding
 
-class ChatbotFragment :Fragment(){
-    private var _binding: FragmentChatbotBinding? = null
-    private val binding: FragmentChatbotBinding
+class SearchFragment :Fragment(){
+    private var _binding: FragmentSearchBinding? = null
+    private val binding: FragmentSearchBinding
         get() = requireNotNull(_binding){"binding이 널임"}
 
     override fun onCreateView(
@@ -19,7 +17,7 @@ class ChatbotFragment :Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentChatbotBinding.inflate(inflater, container, false)
+        _binding = FragmentSearchBinding.inflate(inflater, container, false)
         return binding.root
     }
 

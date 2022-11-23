@@ -15,9 +15,9 @@
         <entry key="app/src/main/res/font/font.xml" value="0.17604166666666668" />
         <entry key="app/src/main/res/layout/activity_intro.xml" value="0.21843550126631184" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.5090543259557344" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2907268170426065" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2993011474609375" />
         <entry key="app/src/main/res/layout/fragment_calendar.xml" value="0.11610486891385768" />
-        <entry key="app/src/main/res/layout/fragment_chatbot.xml" value="0.11610486891385768" />
+        <entry key="app/src/main/res/layout/fragment_chatbot.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_main.xml" value="0.27347470649383354" />
         <entry key="app/src/main/res/layout/fragment_note.xml" value="0.2709602155935452" />
         <entry key="app/src/main/res/layout/fragment_pager_calendar.xml" value="0.2947916666666667" />
