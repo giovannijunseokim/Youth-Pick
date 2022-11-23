@@ -1,7 +1,6 @@
 package com.example.youthpick.fragments
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -18,14 +17,15 @@ class NoteFragment : Fragment() {
     private var _binding: FragmentNoteBinding? = null
     private val binding: FragmentNoteBinding
         get() = requireNotNull(_binding){"binding이 널임"}
-    private val adapter by lazy { NoteRecyclerViewAdapter(requireContext()) }
+    private val adapter by lazy { NoteRecyclerViewAdapter(requireContext(),
+        deleteNote, changeNote , requireActivity()) }
 
     lateinit var db: NoteDatabase
-    var noteList: List<NoteEntity> = listOf<NoteEntity>()
+    var noteList: List<NoteEntity> = listOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        db = NoteDatabase.getInstance(requireActivity())!!
+        db = NoteDatabase.getInstance(requireContext())!!
     }
 
     override fun onCreateView(
@@ -61,7 +61,6 @@ class NoteFragment : Fragment() {
     private fun addMemo() {
         val note = NoteEntity(null,"Test","description")
         insertNote(note)
-        Log.d("GIO", "insertNote")
     }
 
     fun insertNote(note : NoteEntity){
@@ -71,18 +70,34 @@ class NoteFragment : Fragment() {
         addTask.join()
         getAllNotes()
         adapter.setMemoList(noteList)
-        adapter.notifyDataSetChanged()
     }
 
-    private fun getAllNotes(){
+    private val changeNote : (Int) -> Unit = { position ->
+        val note = noteList[position]
+        note.noteTitle = "수정된 제목"
+        note.noteDesc = "수정된 설명"
+        val changeTask = thread{
+            db.noteDAO().insert(note)
+        }
+        changeTask.join()
+        getAllNotes()
+        adapter.setMemoList(noteList)
+    }
+
+    private val deleteNote : (Int) -> Unit = { position ->
+        val deleteTask = thread(true){
+            db.noteDAO().delete(noteList[position])
+        }
+        deleteTask.join()
+        getAllNotes()
+        adapter.setMemoList(noteList)
+    }
+
+    fun getAllNotes(){
         val getTask = thread(true){
             noteList = db.noteDAO().getAllNote()
         }
         getTask.join()
-    }
-
-    fun deleteNote(){
-
     }
 
     override fun onDestroyView() {
