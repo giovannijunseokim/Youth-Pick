@@ -47,8 +47,10 @@
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/et_memo_title"
+            app:layout_constraintBottom_toBottomOf="parent"
             tools:text="설명"
-            android:background="@android:color/transparent"/>
+            android:gravity="top"
+            android:background="@android:color/transparent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
