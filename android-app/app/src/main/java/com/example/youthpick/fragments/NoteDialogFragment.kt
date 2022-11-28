@@ -1,21 +1,52 @@
 package com.example.youthpick.fragments
 
+import android.content.Context
 import android.os.Bundle
-import android.text.Editable
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.example.youthpick.MainActivity.Companion.desc
+import com.example.youthpick.MainActivity.Companion.position
 import com.example.youthpick.MainActivity.Companion.title
+import com.example.youthpick.R
+import com.example.youthpick.data.local.NoteDatabase
+import com.example.youthpick.data.local.NoteEntity
 import com.example.youthpick.databinding.FragmentNoteDialogBinding
+import kotlin.concurrent.thread
 
-class NoteDialogFragment: DialogFragment() {
+
+class NoteDialogFragment : DialogFragment() {
 
     private var _binding: FragmentNoteDialogBinding? = null
     private val binding: FragmentNoteDialogBinding
-        get() = requireNotNull(_binding){"아 왜~~~~~"}
+        get() = requireNotNull(_binding) { "아 왜~~~~~" }
     val bundle by lazy { arguments }
+    lateinit var db: NoteDatabase
+    var noteList: List<NoteEntity> = listOf()
+
+    private lateinit var junseoListener: JunseoListener
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        try {
+            junseoListener = parentFragmentManager.findFragmentById(R.id.fragment_container_view)
+                    as NoteFragment
+        } catch (e: java.lang.ClassCastException) {
+            Log.e("Gio", e.toString())
+        }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        db = NoteDatabase.getInstance(requireContext())!!
+        val getTask = thread(true) {
+            noteList = db.noteDAO().getAllNote()
+        }
+        getTask.join()
+    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,9 +66,16 @@ class NoteDialogFragment: DialogFragment() {
         return NoteDialogFragment()
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-
+    override fun onPause() {
+        super.onPause()
+        val note = noteList[bundle!!.getInt(position)]
+        note.noteTitle = binding.etMemoTitle.text.toString()
+        note.noteDesc = binding.etMemoDesc.text.toString()
+        val changeTask = thread(true) {
+            db.noteDAO().insert(note)
+        }
+        changeTask.join()
+        junseoListener.notifyToAdapter()
     }
 
     override fun onDestroyView() {

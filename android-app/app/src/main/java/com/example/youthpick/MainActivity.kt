@@ -5,15 +5,11 @@ import android.os.Bundle
 import android.view.Gravity
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.youthpick.data.local.NoteDatabase
-import com.example.youthpick.data.local.NoteEntity
 import com.example.youthpick.databinding.ActivityMainBinding
 import com.example.youthpick.fragments.CalendarFragment
-import com.example.youthpick.fragments.SearchFragment
+import com.example.youthpick.fragments.ChatbotFragment
 import com.example.youthpick.fragments.MainFragment
 import com.example.youthpick.fragments.NoteFragment
-import kotlinx.coroutines.NonDisposableHandle.parent
-import kotlin.concurrent.thread
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding : ActivityMainBinding
@@ -93,9 +89,11 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.item_search -> {
                 supportFragmentManager.beginTransaction()
-                    .setCustomAnimations(R.anim.fade_in, R.anim.fade_out,
-                        R.anim.fade_in, R.anim.fade_out)
-                    .replace(R.id.fragment_container_view, SearchFragment())
+                    .setCustomAnimations(
+                        R.anim.fade_in, R.anim.fade_out,
+                        R.anim.fade_in, R.anim.fade_out
+                    )
+                    .replace(R.id.fragment_container_view, ChatbotFragment())
                     .commit()
                 return true
             }
@@ -117,8 +115,11 @@ class MainActivity : AppCompatActivity() {
     private fun drawerClose(){
         binding.drawer.closeDrawer(Gravity.LEFT)
     }
+
     companion object{
         val title = "title"
         val desc = "desc"
+        val position = "position"
     }
+
 }

@@ -1,10 +1,10 @@
 package com.example.youthpick.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.youthpick.MainActivity
 import com.example.youthpick.adapter.NoteRecyclerViewAdapter
@@ -13,12 +13,16 @@ import com.example.youthpick.data.local.NoteEntity
 import com.example.youthpick.databinding.FragmentNoteBinding
 import kotlin.concurrent.thread
 
-class NoteFragment : Fragment() {
+class NoteFragment : Fragment(), JunseoListener {
     private var _binding: FragmentNoteBinding? = null
     private val binding: FragmentNoteBinding
-        get() = requireNotNull(_binding){"binding이 널임"}
-    private val adapter by lazy { NoteRecyclerViewAdapter(requireContext(),
-        deleteNote, changeNote , requireActivity()) }
+        get() = requireNotNull(_binding) { "binding이 널임" }
+    private val adapter by lazy {
+        NoteRecyclerViewAdapter(
+            requireContext(),
+            deleteNote, requireActivity()
+        )
+    }
 
     lateinit var db: NoteDatabase
     var noteList: List<NoteEntity> = listOf()
@@ -72,18 +76,6 @@ class NoteFragment : Fragment() {
         adapter.setMemoList(noteList)
     }
 
-    private val changeNote : (Int) -> Unit = { position ->
-        val note = noteList[position]
-        note.noteTitle = "수정된 제목"
-        note.noteDesc = "수정된 설명"
-        val changeTask = thread{
-            db.noteDAO().insert(note)
-        }
-        changeTask.join()
-        getAllNotes()
-        adapter.setMemoList(noteList)
-    }
-
     private val deleteNote : (Int) -> Unit = { position ->
         val deleteTask = thread(true){
             db.noteDAO().delete(noteList[position])
@@ -94,7 +86,7 @@ class NoteFragment : Fragment() {
     }
 
     fun getAllNotes(){
-        val getTask = thread(true){
+        val getTask = thread(true) {
             noteList = db.noteDAO().getAllNote()
         }
         getTask.join()
@@ -104,4 +96,13 @@ class NoteFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+    override fun notifyToAdapter() {
+        getAllNotes()
+        adapter.setMemoList(noteList)
+    }
+}
+
+interface JunseoListener {
+    fun notifyToAdapter()
 }
