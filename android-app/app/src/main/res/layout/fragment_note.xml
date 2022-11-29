@@ -23,32 +23,12 @@
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:background="@drawable/layout_round_button"
-            android:scaleType="centerInside"
             android:padding="5dp"
+            android:scaleType="centerInside"
             android:src="@drawable/ic_drawer_opener"
             app:iconTint="@color/grey_600" />
     </com.google.android.material.card.MaterialCardView>
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/btn_user"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        app:strokeColor="@color/grey_300"
-        app:strokeWidth="1dp"
-        android:layout_margin="30dp"
-        app:cardCornerRadius="20dp"
-        app:rippleColor="@android:color/transparent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-        <ImageButton
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:src="@drawable/ic_user"
-            android:background="@drawable/layout_round_button"
-            android:scaleType="centerInside"
-            android:padding="5dp"
-            app:iconTint="@color/grey_600" />
-    </com.google.android.material.card.MaterialCardView>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_memo"
         android:layout_width="match_parent"
