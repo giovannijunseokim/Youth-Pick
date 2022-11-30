@@ -30,7 +30,28 @@ class MainFragment() : Fragment() {
         binding.viewpager.orientation = ViewPager2.ORIENTATION_HORIZONTAL
         binding.viewpager.setPadding(240, 0, 240, 0)
         binding.viewpager.setPageTransformer { page, position ->
-            page.translationX = position * 150
+            page.translationX = position * 200
+        }
+
+        binding.btnPagerLeft.setOnClickListener {
+            when (binding.viewpager.currentItem) {
+                1 -> {
+                    binding.viewpager.setCurrentItem(0, true)
+                }
+                2 -> {
+                    binding.viewpager.setCurrentItem(1, true)
+                }
+            }
+        }
+        binding.btnPagerRight.setOnClickListener {
+            when (binding.viewpager.currentItem) {
+                0 -> {
+                    binding.viewpager.setCurrentItem(1, true)
+                }
+                1 -> {
+                    binding.viewpager.setCurrentItem(2, true)
+                }
+            }
         }
 
         val wormDotsIndicator = binding.wormDotsIndicator

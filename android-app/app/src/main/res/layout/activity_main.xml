@@ -29,7 +29,7 @@
             app:menu="@menu/menu_main"
             app:itemRippleColor="@color/youthpick_orange"
             app:labelVisibilityMode="unlabeled"
-            app:itemIconSize="20dp"
+            app:itemIconSize="25dp"
             app:itemIconTint="@drawable/menu_selector_color"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
