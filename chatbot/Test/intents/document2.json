@@ -1,0 +1,35 @@
+{
+  "id": "ecfdf28c-2b55-44ea-9a14-daa6b67a023c",
+  "name": "document2",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "(신청링크) -\u003e https://account.welfare.seoul.kr/web/contents/noticeMatch.lp?srchAct\u003dview\u0026boardCd\u003d20220520111858993941"
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}
