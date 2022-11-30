@@ -1,4 +1,4 @@
-package com.example.youthpick.fragments
+package com.example.youthpick.presentation.main.fragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,16 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
-import com.example.youthpick.MainActivity
-import com.example.youthpick.SearchActivity
-import com.example.youthpick.adapter.ViewPagerAdapter
 import com.example.youthpick.databinding.FragmentMainBinding
+import com.example.youthpick.presentation.main.adapter.ViewPagerAdapter
+import com.example.youthpick.presentation.main.view.MainActivity
+import com.example.youthpick.presentation.search.view.SearchActivity
 
 
-class MainFragment ():Fragment(){
+class MainFragment() : Fragment() {
     private var _binding: FragmentMainBinding? = null
     private val binding: FragmentMainBinding
-        get() = requireNotNull(_binding){"binding이 널임"}
+        get() = requireNotNull(_binding) { "binding이 널임" }
     private val adapter by lazy { ViewPagerAdapter(requireContext()) }
 
     override fun onCreateView(

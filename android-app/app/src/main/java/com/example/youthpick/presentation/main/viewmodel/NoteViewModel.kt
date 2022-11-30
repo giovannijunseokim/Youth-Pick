@@ -1,4 +1,4 @@
-package com.example.youthpick.models
+package com.example.youthpick.presentation.main.viewmodel
 
 import android.content.Context
 import androidx.lifecycle.ViewModel

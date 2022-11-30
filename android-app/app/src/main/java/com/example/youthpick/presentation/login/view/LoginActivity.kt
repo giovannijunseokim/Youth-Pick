@@ -1,13 +1,15 @@
-package com.example.youthpick
+package com.example.youthpick.presentation.login.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.youthpick.databinding.ActivityLoginBinding
+
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
         val binding = ActivityLoginBinding.inflate(layoutInflater)
+
+        setContentView(binding.root)
     }
 }

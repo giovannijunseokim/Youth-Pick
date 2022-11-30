@@ -1,4 +1,4 @@
-package com.example.youthpick.fragments
+package com.example.youthpick.presentation.main.fragment
 
 import android.content.Context
 import android.os.Bundle
@@ -7,13 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
-import com.example.youthpick.MainActivity.Companion.desc
-import com.example.youthpick.MainActivity.Companion.position
-import com.example.youthpick.MainActivity.Companion.title
 import com.example.youthpick.R
 import com.example.youthpick.data.local.NoteDatabase
 import com.example.youthpick.data.local.NoteEntity
 import com.example.youthpick.databinding.FragmentNoteDialogBinding
+import com.example.youthpick.presentation.main.view.MainActivity.Companion.desc
+import com.example.youthpick.presentation.main.view.MainActivity.Companion.position
+import com.example.youthpick.presentation.main.view.MainActivity.Companion.title
 import kotlin.concurrent.thread
 
 

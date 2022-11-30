@@ -1,19 +1,20 @@
-package com.example.youthpick
+package com.example.youthpick.presentation.main.view
 
 
 import android.os.Bundle
 import android.view.Gravity
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.youthpick.R
 import com.example.youthpick.databinding.ActivityMainBinding
-import com.example.youthpick.fragments.CalendarFragment
-import com.example.youthpick.fragments.ChatbotFragment
-import com.example.youthpick.fragments.MainFragment
-import com.example.youthpick.fragments.NoteFragment
+import com.example.youthpick.presentation.main.fragment.CalendarFragment
+import com.example.youthpick.presentation.main.fragment.ChatbotFragment
+import com.example.youthpick.presentation.main.fragment.MainFragment
+import com.example.youthpick.presentation.main.fragment.NoteFragment
 
 class MainActivity : AppCompatActivity() {
-    lateinit var binding : ActivityMainBinding
-    var mBackWait:Long = 0
+    lateinit var binding: ActivityMainBinding
+    var mBackWait: Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,10 +29,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        if(System.currentTimeMillis() - mBackWait >=2000 ) {
+        if (System.currentTimeMillis() - mBackWait >= 2000) {
             mBackWait = System.currentTimeMillis()
-            Toast.makeText(this, "한번 더 누르면 종료합니다.", Toast.LENGTH_SHORT).show() }
-        else {
+            Toast.makeText(this, "한번 더 누르면 종료합니다.", Toast.LENGTH_SHORT).show()
+        } else {
             finish()
         }
     }
@@ -59,30 +60,37 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun firstFragment(){
+    private fun firstFragment() {
         val currentFragment = supportFragmentManager.findFragmentById(R.id.fragment_container_view)
-        if(currentFragment == null) {
+        if (currentFragment == null) {
             supportFragmentManager.beginTransaction()
-                .setCustomAnimations(R.anim.fade_in, R.anim.fade_out,
-                    R.anim.fade_in, R.anim.fade_out)
+                .setCustomAnimations(
+                    R.anim.fade_in, R.anim.fade_out,
+                    R.anim.fade_in, R.anim.fade_out
+                )
                 .add(R.id.fragment_container_view, MainFragment())
                 .commit()
         }
     }
-    fun changeFragment(itemId : Int) : Boolean{
-        when(itemId) {
+
+    fun changeFragment(itemId: Int): Boolean {
+        when (itemId) {
             R.id.item_main -> {
                 supportFragmentManager.beginTransaction()
-                    .setCustomAnimations(R.anim.fade_in, R.anim.fade_out,
-                        R.anim.fade_in, R.anim.fade_out)
+                    .setCustomAnimations(
+                        R.anim.fade_in, R.anim.fade_out,
+                        R.anim.fade_in, R.anim.fade_out
+                    )
                     .replace(R.id.fragment_container_view, MainFragment())
                     .commit()
                 return true
             }
             R.id.item_calendar -> {
                 supportFragmentManager.beginTransaction()
-                    .setCustomAnimations(R.anim.fade_in, R.anim.fade_out,
-                        R.anim.fade_in, R.anim.fade_out)
+                    .setCustomAnimations(
+                        R.anim.fade_in, R.anim.fade_out,
+                        R.anim.fade_in, R.anim.fade_out
+                    )
                     .replace(R.id.fragment_container_view, CalendarFragment())
                     .commit()
                 return true
@@ -99,8 +107,10 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.item_note -> {
                 supportFragmentManager.beginTransaction()
-                    .setCustomAnimations(R.anim.fade_in, R.anim.fade_out,
-                        R.anim.fade_in, R.anim.fade_out)
+                    .setCustomAnimations(
+                        R.anim.fade_in, R.anim.fade_out,
+                        R.anim.fade_in, R.anim.fade_out
+                    )
                     .replace(R.id.fragment_container_view, NoteFragment())
                     .commit()
                 return true
@@ -109,14 +119,15 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun drawerOpen(){
+    fun drawerOpen() {
         binding.drawer.openDrawer(Gravity.LEFT)
     }
-    private fun drawerClose(){
+
+    private fun drawerClose() {
         binding.drawer.closeDrawer(Gravity.LEFT)
     }
 
-    companion object{
+    companion object {
         val title = "title"
         val desc = "desc"
         val position = "position"
