@@ -1,4 +1,4 @@
-package com.example.youthpick.fragments
+package com.example.youthpick.presentation.main.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,11 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.youthpick.MainActivity
-import com.example.youthpick.adapter.NoteRecyclerViewAdapter
 import com.example.youthpick.data.local.NoteDatabase
 import com.example.youthpick.data.local.NoteEntity
 import com.example.youthpick.databinding.FragmentNoteBinding
+import com.example.youthpick.presentation.main.adapter.NoteRecyclerViewAdapter
+import com.example.youthpick.presentation.main.view.MainActivity
 import kotlin.concurrent.thread
 
 class NoteFragment : Fragment(), JunseoListener {
@@ -58,17 +58,17 @@ class NoteFragment : Fragment(), JunseoListener {
         getAllNotes()
         adapter.setMemoList(noteList)
         binding.rvMemo.adapter = adapter
-        val manager = GridLayoutManager(activity,2)
+        val manager = GridLayoutManager(activity, 2)
         binding.rvMemo.layoutManager = manager
     }
 
     private fun addMemo() {
-        val note = NoteEntity(null,"Test","description")
+        val note = NoteEntity(null, "Test", "description")
         insertNote(note)
     }
 
-    fun insertNote(note : NoteEntity){
-        val addTask = thread(true){
+    fun insertNote(note: NoteEntity) {
+        val addTask = thread(true) {
             db.noteDAO().insert(note)
         }
         addTask.join()
@@ -76,8 +76,8 @@ class NoteFragment : Fragment(), JunseoListener {
         adapter.setMemoList(noteList)
     }
 
-    private val deleteNote : (Int) -> Unit = { position ->
-        val deleteTask = thread(true){
+    private val deleteNote: (Int) -> Unit = { position ->
+        val deleteTask = thread(true) {
             db.noteDAO().delete(noteList[position])
         }
         deleteTask.join()
@@ -85,7 +85,7 @@ class NoteFragment : Fragment(), JunseoListener {
         adapter.setMemoList(noteList)
     }
 
-    fun getAllNotes(){
+    fun getAllNotes() {
         val getTask = thread(true) {
             noteList = db.noteDAO().getAllNote()
         }

@@ -1,4 +1,4 @@
-package com.example.youthpick.fragments
+package com.example.youthpick.presentation.main.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

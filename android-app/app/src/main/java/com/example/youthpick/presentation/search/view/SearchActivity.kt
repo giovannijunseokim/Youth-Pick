@@ -1,4 +1,4 @@
-package com.example.youthpick
+package com.example.youthpick.presentation.search.view
 
 import android.os.Bundle
 import android.webkit.WebViewClient
@@ -14,8 +14,8 @@ class SearchActivity : AppCompatActivity() {
         binding.wvSearch.apply {
             webViewClient = WebViewClient()
             settings.javaScriptEnabled = true;
-            settings.setUseWideViewPort(true);       // wide viewport를 사용하도록 설정
-            settings.setLoadWithOverviewMode(true);  // 컨텐츠가 웹뷰보다 클 경우 스크린 크기에 맞게 조정
+            settings.useWideViewPort = true;       // wide viewport를 사용하도록 설정
+            settings.loadWithOverviewMode = true;  // 컨텐츠가 웹뷰보다 클 경우 스크린 크기에 맞게 조정
         }
         binding.wvSearch.loadUrl("https://youth.seoul.go.kr/search/")
 

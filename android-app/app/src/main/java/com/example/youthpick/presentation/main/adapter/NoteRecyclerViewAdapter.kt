@@ -1,4 +1,4 @@
-package com.example.youthpick.adapter
+package com.example.youthpick.presentation.main.adapter
 
 import android.content.Context
 import android.os.Bundle
@@ -6,17 +6,20 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.youthpick.MainActivity
-import com.example.youthpick.MainActivity.Companion.desc
-import com.example.youthpick.MainActivity.Companion.title
 import com.example.youthpick.data.local.NoteEntity
 import com.example.youthpick.databinding.ItemMemosBinding
-import com.example.youthpick.fragments.NoteDialogFragment
-import com.example.youthpick.models.NoteItem
+import com.example.youthpick.presentation.main.fragment.NoteDeleteDialogFragment
+import com.example.youthpick.presentation.main.fragment.NoteDialogFragment
+import com.example.youthpick.presentation.main.item.NoteItem
+import com.example.youthpick.presentation.main.view.MainActivity
+import com.example.youthpick.presentation.main.view.MainActivity.Companion.desc
+import com.example.youthpick.presentation.main.view.MainActivity.Companion.title
 
-class NoteRecyclerViewAdapter(context: Context,
-                              _deleteNote: (Int) -> Unit,
-                              _activity: FragmentActivity) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class NoteRecyclerViewAdapter(
+    context: Context,
+    _deleteNote: (Int) -> Unit,
+    _activity: FragmentActivity
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val inflater by lazy { LayoutInflater.from(context) }
     private var noteList: List<NoteEntity> = emptyList()
     private val deleteNote by lazy { _deleteNote }
@@ -40,7 +43,14 @@ class NoteRecyclerViewAdapter(context: Context,
 
         fun onNoteClick(data: NoteEntity, position: Int) {
             binding.ivDelete.setOnClickListener {
-                deleteNote(position)
+                val bundle = Bundle()
+                bundle.putInt(MainActivity.position, position)
+                val dialog = NoteDeleteDialogFragment().getInstance()
+                dialog.arguments = bundle
+                activity.supportFragmentManager.let { fragmentManager ->
+                    dialog.getInstance()
+                    dialog.show(fragmentManager, null)
+                }
             }
             binding.memosItem.setOnClickListener {
                 val bundle = Bundle()
