@@ -49,8 +49,8 @@ class MainActivity : AppCompatActivity() {
             drawerClose()
         }
         binding.tvDrawerChatbot.setOnClickListener {
-            changeFragment(R.id.item_search)
-            binding.bnvMain.selectedItemId = R.id.item_search
+            changeFragment(R.id.item_chatbot)
+            binding.bnvMain.selectedItemId = R.id.item_chatbot
             drawerClose()
         }
         binding.tvDrawerNote.setOnClickListener {
@@ -95,7 +95,7 @@ class MainActivity : AppCompatActivity() {
                     .commit()
                 return true
             }
-            R.id.item_search -> {
+            R.id.item_chatbot -> {
                 supportFragmentManager.beginTransaction()
                     .setCustomAnimations(
                         R.anim.fade_in, R.anim.fade_out,

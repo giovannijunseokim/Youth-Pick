@@ -16,9 +16,9 @@ class ViewPagerAdapter(context: Context) :
     RecyclerView.Adapter<ViewPagerAdapter.PagerViewHolder>() {
     private val inflater by lazy { LayoutInflater.from(context) }
     lateinit var binding: ItemPagesBinding
-    val activity = context as MainActivity
-    val mainPagerViewModel = MainPagerViewModel()
-    val itemList = mainPagerViewModel.itemList.toList()
+    private val activity = context as MainActivity
+    private val mainPagerViewModel = MainPagerViewModel()
+    private val itemList = mainPagerViewModel.itemList.toList()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PagerViewHolder {
         binding = ItemPagesBinding.inflate(inflater, parent, false)
         return PagerViewHolder(binding)
@@ -47,8 +47,8 @@ class ViewPagerAdapter(context: Context) :
                         activity.binding.bnvMain.selectedItemId = R.id.item_calendar
                     }
                     1 -> {
-                        activity.changeFragment(R.id.item_search)
-                        activity.binding.bnvMain.selectedItemId = R.id.item_search
+                        activity.changeFragment(R.id.item_chatbot)
+                        activity.binding.bnvMain.selectedItemId = R.id.item_chatbot
                     }
                     2 -> {
                         activity.changeFragment(R.id.item_note)
