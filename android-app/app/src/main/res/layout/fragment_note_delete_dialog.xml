@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:elevation="10dp">
+
+        <TextView
+            android:id="@+id/tv_delete_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_delete_dialog"
+            android:fontFamily="@font/apple_gothic_700"
+            android:textSize="18dp"
+            android:padding="20dp"
+            android:layout_margin="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/flow_btn" />
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flow_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="btn_maintain_dialog, btn_delete_dialog"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_delete_note"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_delete_dialog"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/delete_dialog"
+            android:background="@color/orange_500"
+            android:fontFamily="@font/apple_gothic_700"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_maintain_dialog"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/maintain_dialog"
+            android:background="@color/grey_200"
+            android:fontFamily="@font/apple_gothic_700"
+            android:textColor="@color/grey_700" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

@@ -26,4 +26,7 @@
     <string name="chatbot_page_desc">모르는건 챗봇에게 물어봐~</string>
     <string name="memo_page_title">메모 바로가기</string>
     <string name="memo_page_desc">중요한 일정은 메모해두자</string>
+    <string name="title_delete_dialog">삭제하시겠습니까?</string>
+    <string name="delete_dialog">삭제하기</string>
+    <string name="maintain_dialog">취소하기</string>
 </resources>

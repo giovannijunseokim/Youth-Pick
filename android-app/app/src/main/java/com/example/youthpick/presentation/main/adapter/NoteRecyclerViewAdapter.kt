@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.youthpick.data.local.NoteEntity
 import com.example.youthpick.databinding.ItemMemosBinding
+import com.example.youthpick.presentation.main.fragment.NoteDeleteDialogFragment
 import com.example.youthpick.presentation.main.fragment.NoteDialogFragment
 import com.example.youthpick.presentation.main.item.NoteItem
 import com.example.youthpick.presentation.main.view.MainActivity
@@ -42,7 +43,14 @@ class NoteRecyclerViewAdapter(
 
         fun onNoteClick(data: NoteEntity, position: Int) {
             binding.ivDelete.setOnClickListener {
-                deleteNote(position)
+                val bundle = Bundle()
+                bundle.putInt(MainActivity.position, position)
+                val dialog = NoteDeleteDialogFragment().getInstance()
+                dialog.arguments = bundle
+                activity.supportFragmentManager.let { fragmentManager ->
+                    dialog.getInstance()
+                    dialog.show(fragmentManager, null)
+                }
             }
             binding.memosItem.setOnClickListener {
                 val bundle = Bundle()
