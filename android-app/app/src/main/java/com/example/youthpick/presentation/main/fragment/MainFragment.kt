@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.example.youthpick.databinding.FragmentMainBinding
@@ -54,16 +55,24 @@ class MainFragment() : Fragment() {
             }
         }
 
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                val intent = Intent(requireContext(), SearchActivity::class.java)
+                startActivity(intent)
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                return true
+            }
+
+        })
+
         val wormDotsIndicator = binding.wormDotsIndicator
         wormDotsIndicator.attachTo(binding.viewpager)
 
         binding.btnDrawerOpener.setOnClickListener {
             (activity as MainActivity).drawerOpen()
-        }
-
-        binding.btnSearchSetting.setOnClickListener {
-            val intent = Intent(requireContext(), SearchActivity::class.java)
-            startActivity(intent)
         }
 
         return binding.root
