@@ -1,13 +1,12 @@
-const express = require("express");
+const express = require('express');
 const app = express();
+const port = 3000;
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
-  });
-  app.use('/', (req, res) => express.static(__dirname, './css')); 
-  app.use('/', (req, res) => express.static(__dirname, './image'));
-  app.use('/', (req, res) => express.static(__dirname, './js'));
-  app.use('/', (req, res) => express.static(__dirname, './vendor'));   
-app.listen(3000, () => {
-  console.log("listening on *:3000");
-});
+app.use(express.static(__dirname + "/public"))
+
+app.get("/",(req, res) => {
+    res.sendFile(__dirname + "/index.html")
+})
+app.listen(port,()=>{
+    console.log("http://localhost:3000/ server is running.")
+})
