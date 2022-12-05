@@ -27,6 +27,6 @@
     <string name="memo_page_title">메모 바로가기</string>
     <string name="memo_page_desc">중요한 일정은 메모해두자</string>
     <string name="title_delete_dialog">삭제하시겠습니까?</string>
-    <string name="delete_dialog">삭제하기</string>
-    <string name="maintain_dialog">취소하기</string>
+    <string name="yes">예</string>
+    <string name="no">아니오</string>
 </resources>

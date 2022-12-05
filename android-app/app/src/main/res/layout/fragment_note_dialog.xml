@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content" >
+    android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="340dp"
         android:layout_height="500dp"
-        android:elevation="10dp"
-        android:padding="20dp" >
+        android:background="@drawable/layout_round_dialog"
+        android:padding="20dp">
 
         <ImageView
             android:id="@+id/iv_back"
@@ -27,6 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="40dp"
+            android:background="@android:color/transparent"
             android:ellipsize="end"
             android:fontFamily="@font/apple_gothic_800"
             android:singleLine="true"
@@ -34,23 +35,21 @@
             android:textSize="28sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="제목"
-            android:background="@android:color/transparent"/>
+            tools:text="제목" />
 
         <EditText
             android:id="@+id/et_memo_desc"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_margin="15dp"
+            android:background="@android:color/transparent"
             android:ellipsize="end"
             android:fontFamily="@font/apple_gothic_600"
+            android:gravity="top"
             android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/et_memo_title"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:text="설명"
-            android:gravity="top"
-            android:background="@android:color/transparent" />
+            tools:text="설명" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </FrameLayout>
