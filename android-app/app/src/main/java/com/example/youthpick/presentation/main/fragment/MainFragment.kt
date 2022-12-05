@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
@@ -57,8 +58,49 @@ class MainFragment() : Fragment() {
 
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                val intent = Intent(requireContext(), SearchActivity::class.java)
-                startActivity(intent)
+                when (query) {
+                    "청년 이사" -> {
+                        startActivity(
+                            Intent(requireContext(), SearchActivity::class.java)
+                                .putExtra(
+                                    "keyword",
+                                    "https://youth.seoul.go.kr/site/main/customSupp/mainView?bizId=A2022090700300200100000363"
+                                )
+                        )
+                    }
+                    "학자금 대출" -> {
+                        startActivity(
+                            Intent(requireContext(), SearchActivity::class.java)
+                                .putExtra(
+                                    "keyword",
+                                    "https://youth.seoul.go.kr/site/main/customSupp/mainView?bizId=A2022031600300200100000014"
+                                )
+                        )
+                    }
+                    "희망 두배 청년 통장" -> {
+                        startActivity(
+                            Intent(requireContext(), SearchActivity::class.java)
+                                .putExtra(
+                                    "keyword",
+                                    "https://youth.seoul.go.kr/site/main/customSupp/mainView?bizId=A2022031600300200100000013"
+                                )
+                        )
+                    }
+                    else -> {
+                        startActivity(
+                            Intent(
+                                requireContext(),
+                                SearchActivity::class.java
+                            )
+                                .putExtra("keyword", "https://youth.seoul.go.kr/search/search.s")
+                        )
+                        Toast.makeText(
+                            requireContext(), "검색어를 다시 한 번 입력해주세요.",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+
+                }
                 return true
             }
 
