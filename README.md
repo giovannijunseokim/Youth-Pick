@@ -1,14 +1,15 @@
-#Youth-Pick
-##"숭실대학교 오픈소스기반기초설계 6조 프로젝트 레포지토리입니다."
-***
-###YOUTH-PICK + 는 청년 정책 종합 데이터 제공 앱 서비스입니다. 
+<div align="center" ><img width="500px" src="https://user-images.githubusercontent.com/99392366/205932691-b75cd2f7-a28e-4342-950f-43fc3e1bf3fd.png"/></div>
+
+<h3 align="center" > "숭실대학교 오픈소스기반기초설계 6조 프로젝트 레포지토리입니다." </h4>
+<p align="center" > ✅ YOUTH-PICK + 는 청년 정책 종합 데이터 제공 앱 서비스입니다. </p>
+
 ***
 
 <img src="https://user-images.githubusercontent.com/99392366/205929650-63567d50-9265-4640-9567-309c1d6ed2f1.png"/>
 <img src="https://user-images.githubusercontent.com/99392366/205929649-66041be3-5dbc-4816-8bef-a7a9d2f6663d.png"/>
 <img src="https://user-images.githubusercontent.com/99392366/205929645-c527fd7c-46cd-4c55-9bb4-de89e63527f6.png"/>
 <img src="https://user-images.githubusercontent.com/99392366/205929641-2d61ae90-be13-4573-b20c-7a7feca24e77.png"/>
-<img src="https://user-images.githubusercontent.com/99392366/205929636-0ccaa6ab-6c87-4c6c-8009-4a8baefb99c7.png)"/>
+<img src="https://user-images.githubusercontent.com/99392366/205929636-0ccaa6ab-6c87-4c6c-8009-4a8baefb99c7.png"/>
 <img src="https://user-images.githubusercontent.com/99392366/205929633-c2824375-f8bd-43e6-b2b0-feb4de7479af.png"/>
 <img src="https://user-images.githubusercontent.com/99392366/205929631-6a46d2f1-c7d8-49b4-a451-c42087a2bd79.png"/>
 <img src="https://user-images.githubusercontent.com/99392366/205929629-1aaaa307-cff5-4966-8f50-987490264e28.png"/>
