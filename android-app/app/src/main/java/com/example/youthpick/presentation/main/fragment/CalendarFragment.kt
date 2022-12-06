@@ -31,7 +31,7 @@ class CalendarFragment : Fragment() {
             settings.useWideViewPort = true;       // wide viewport를 사용하도록 설정
             settings.loadWithOverviewMode = true;  // 컨텐츠가 웹뷰보다 클 경우 스크린 크기에 맞게 조정
         }
-        binding.wvCalendar.loadUrl("http://54.180.127.254:3000/")
+        binding.wvCalendar.loadUrl("http://localhost:3000/")
     }
 
     override fun onDestroyView() {
