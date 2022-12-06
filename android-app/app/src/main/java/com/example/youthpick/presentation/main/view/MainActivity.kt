@@ -1,12 +1,14 @@
 package com.example.youthpick.presentation.main.view
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Gravity
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.youthpick.R
 import com.example.youthpick.databinding.ActivityMainBinding
+import com.example.youthpick.presentation.license.view.LicenseActivity
 import com.example.youthpick.presentation.main.fragment.CalendarFragment
 import com.example.youthpick.presentation.main.fragment.ChatbotFragment
 import com.example.youthpick.presentation.main.fragment.MainFragment
@@ -57,6 +59,9 @@ class MainActivity : AppCompatActivity() {
             changeFragment(R.id.item_note)
             binding.bnvMain.selectedItemId = R.id.item_note
             drawerClose()
+        }
+        binding.tvDrawerLicense.setOnClickListener {
+            startActivity(Intent(this@MainActivity, LicenseActivity::class.java))
         }
     }
 
