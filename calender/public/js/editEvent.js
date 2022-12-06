@@ -86,7 +86,6 @@ var editEvent = function (event, element, view) {
                 //...
             },
             success: function (response) {
-                alert('수정되었습니다.')
             }
         });
 
@@ -108,7 +107,6 @@ $('#deleteEvent').on('click', function () {
             //...
         },
         success: function (response) {
-            alert('삭제되었습니다.');
         }
     });
 
