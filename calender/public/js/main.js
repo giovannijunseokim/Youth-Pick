@@ -22,7 +22,7 @@ var calendar = $('#calendar').fullCalendar({
                               },
   eventLimitClick           : 'week', //popover
   navLinks                  : true,
-  defaultDate               : moment('2022-11'), //실제 사용시 현재 날짜로 수정
+  defaultDate               : moment('2022-12'), //실제 사용시 현재 날짜로 수정
   timeFormat                : 'HH:mm',
   defaultTimedEventDuration : '01:00:00',
   editable                  : true,
@@ -83,7 +83,7 @@ var calendar = $('#calendar').fullCalendar({
       placement: 'top',
       html: true,
       container: 'body'
-    });
+    })
 
     return filtering(event);
 
