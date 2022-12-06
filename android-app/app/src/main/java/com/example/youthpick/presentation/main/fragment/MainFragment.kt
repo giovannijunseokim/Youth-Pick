@@ -59,7 +59,7 @@ class MainFragment() : Fragment() {
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 when (query) {
-                    "청년 이사" -> {
+                    "청년 이사비 지원" -> {
                         startActivity(
                             Intent(requireContext(), SearchActivity::class.java)
                                 .putExtra(
