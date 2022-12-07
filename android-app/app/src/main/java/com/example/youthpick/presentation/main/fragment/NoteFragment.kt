@@ -63,7 +63,7 @@ class NoteFragment : Fragment(), JunseoListener {
     }
 
     private fun addMemo() {
-        val note = NoteEntity(null, "Test", "description")
+        val note = NoteEntity(null, "제목", "내용")
         insertNote(note)
     }
 
