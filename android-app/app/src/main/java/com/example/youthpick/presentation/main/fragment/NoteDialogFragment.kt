@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
+import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import com.example.youthpick.R
 import com.example.youthpick.data.local.NoteDatabase
@@ -62,6 +63,8 @@ class NoteDialogFragment : DialogFragment() {
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog?.window?.requestFeature(Window.FEATURE_NO_TITLE)
         binding.ivBack.setOnClickListener {
+            Toast.makeText(requireContext(), "저장되었습니다", Toast.LENGTH_SHORT)
+                .show()
             dismiss()
         }
         return binding.root
