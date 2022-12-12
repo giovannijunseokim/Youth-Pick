@@ -13,7 +13,7 @@ import com.example.youthpick.databinding.FragmentMainBinding
 import com.example.youthpick.presentation.main.adapter.ViewPagerAdapter
 import com.example.youthpick.presentation.main.view.MainActivity
 import com.example.youthpick.presentation.search.view.SearchActivity
-
+import com.example.youthpick.util.extension.hideKeyboard
 
 class MainFragment() : Fragment() {
     private var _binding: FragmentMainBinding? = null
@@ -34,6 +34,7 @@ class MainFragment() : Fragment() {
         binding.viewpager.setPageTransformer { page, position ->
             page.translationX = position * 200
         }
+        binding.layout.setOnClickListener { requireContext().hideKeyboard(it) }
 
         binding.btnPagerLeft.setOnClickListener {
             when (binding.viewpager.currentItem) {
